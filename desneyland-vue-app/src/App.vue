@@ -7,6 +7,7 @@
     <nav>
       <ul>
         <li><a href="">DESNEYLAND</a></li>
+        <li><a href="">BUY TICKET</a></li>
       </ul>
     </nav>
   </div>
