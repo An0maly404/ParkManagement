@@ -1,21 +1,21 @@
 <template>
-  <header>
-    <a id="title" href="App.vue">DESNEYLAND</a>
-  </header>
-  
-  <div class="header">
-    <nav>
-      <ul>
-        <li><a href="">DESNEYLAND</a></li>
-        <li><a href="">BUY TICKET</a></li>
-      </ul>
-    </nav>
+  <div>
+    <NavBar />
+    <div style="margin-top:80px;">
+      <h2>WELCOME TO DESNEYLAND !</h2>
+      <p>DISCOVER OUR ATTRACTIONS</p>
+    </div>
   </div>
-  <p>Here is our web application for our attraction parc management project</p>
 </template>
 
 <script>
+import NavBar from './components/NavBar.vue';
 
+export default{
+  components:{
+    NavBar,
+  },
+};
 </script>
 
 <style>
