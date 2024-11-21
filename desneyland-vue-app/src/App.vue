@@ -19,6 +19,14 @@ export default{
 </script>
 
 <style>
+body{
+  background-image: url('https://img.freepik.com/vecteurs-libre/fond-hiver-non-localise-flocons-neige_1393-271.jpg'); /* Remplace par l'URL de ton image */
+  background-size: cover; /* Ajuste pour remplir tout l'écran */
+  background-position: center; /* Centre l'image */
+  background-attachment: fixed; /* Laisse l'image fixe même en défilant */
+  color: #333; /* Garde un bon contraste pour le texte */
+  font-family: "Arial", sans-serif;
+}
 header{
   height: auto;
   background-color: blue;

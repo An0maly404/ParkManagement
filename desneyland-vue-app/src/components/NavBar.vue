@@ -23,7 +23,10 @@
   
   <style scoped>
   /* Style global de la barre de navigation */
+
   .navbar {
+
+    font-family: "Arial", sans-serif;
     position: fixed;
     top: 0;
     width: 100%;
