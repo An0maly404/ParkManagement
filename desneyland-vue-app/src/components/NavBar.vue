@@ -25,7 +25,10 @@
   /* Style global de la barre de navigation */
 
   .navbar {
-
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
     font-family: "Arial", sans-serif;
     position: fixed;
     top: 0;
@@ -46,7 +49,7 @@
     font-size: 2.5rem;
     color: #D72638;
     text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
-    margin: 0;
+    margin: 1rem;
     animation: glow 1.5s ease-in-out infinite alternate;
   }
 
@@ -59,6 +62,13 @@
   }
 }
   
+  .navbar-links{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8rem;
+  }
   /* Style des liens de navigation */
   .navbar-links a {
     margin: 0 1rem;
@@ -66,6 +76,7 @@
     font-size: 1rem;
     color: #333;
     transition: color 0.3s;
+    line-height: 1;
   }
   
   .navbar-links a:hover {
