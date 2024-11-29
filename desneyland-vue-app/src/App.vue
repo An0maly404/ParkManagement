@@ -9,10 +9,7 @@
   </div>
   <div class="attractions">
     <div class="attractions-slider">
-      <router-link to="/attraction/1">
-        <img :src="require('@/assets/csm_parc-asterix-attraction_58dfd74118.jpg')" alt="Parc Astérix" />
-      </router-link>
-      
+      <img :src="require('@/assets/csm_parc-asterix-attraction_58dfd74118.jpg')" alt="Parc Astérix" />
       <img :src="require('@/assets/8896-les-10-parcs-d-attraction.jpg')" alt="Attraction 2" />
       <img :src="require('@/assets/images.jpg')" alt="Attraction 3" />
       <img :src="require('@/assets/parc-bagatelle.jpg')" alt="Parc Bagatelle" />
@@ -61,25 +58,25 @@ header{
   margin-top: 60px;
 }
 /*ADDING THE SLIDER ATTRACTIONS*/
-
 .attractions{
-  background-color: #FAFAFA;
-  padding: 1rem 0;
-  white-space: nowrap;
-  position: relative;
   overflow: hidden;
+  padding: 0 0;
+  white-space: nowrap;
 }
 
-.attractions:hover .attractions-slider {
+.attractions:hover .attractions-slider{
   animation-play-state: paused;
 }
 
 
 .attractions-slider{
   display: inline-block;
-  animation: 40s slide infinite linear;
-}
+  animation: 30s slide infinite linear;
+  overflow: hidden;
+  left: 0;
+  right: 0;
 
+}
 .attractions-slider img{
   border-radius: 15px;
   height: 20rem;
