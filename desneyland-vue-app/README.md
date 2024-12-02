@@ -1,4 +1,4 @@
-# desneyland-vue-app
+# my-vue-test
 
 ## Project setup
 ```

@@ -1,101 +1,124 @@
 <template>
-  <div>
-    <NavBar />
-    
-    <div style="margin-top:80px;">
-      <h2>WELCOME TO DESNEYLAND !</h2>
-      <p>DISCOVER OUR ATTRACTIONS</p>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <h1 class="park-name">DESNEYLAND</h1>
     </div>
+    <div class="navbar-links">
+      <router-link to="/animals">Attractions</router-link>
+      <router-link to="/food">Hotels</router-link><br>
+    </div>
+    <div class="navbar-right">
+      <button class="book-now">BOOK NOW</button>
+    </div>
+  </nav>
+  
+  <div class="routerview">
+    <router-view></router-view>
   </div>
-  <div class="attractions">
-    <div class="attractions-slider">
-      <img :src="require('@/assets/csm_parc-asterix-attraction_58dfd74118.jpg')" alt="Parc Astérix" />
-      <img :src="require('@/assets/8896-les-10-parcs-d-attraction.jpg')" alt="Attraction 2" />
-      <img :src="require('@/assets/images.jpg')" alt="Attraction 3" />
-      <img :src="require('@/assets/parc-bagatelle.jpg')" alt="Parc Bagatelle" />
-    </div>
-    <div class="attractions-slider">
-      <img :src="require('@/assets/csm_parc-asterix-attraction_58dfd74118.jpg')" alt="Parc Astérix" />
-      <img :src="require('@/assets/8896-les-10-parcs-d-attraction.jpg')" alt="Attraction 2" />
-      <img :src="require('@/assets/images.jpg')" alt="Attraction 3" />
-      <img :src="require('@/assets/parc-bagatelle.jpg')" alt="Parc Bagatelle" />
-    </div>
-  </div>
-
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue';
-
 export default{
-  components:{
-    NavBar,
-  },
+  name:'App',
 };
-
 
 </script>
 
-<style>
-body{
-  background-image: url('https://img.freepik.com/vecteurs-libre/fond-hiver-non-localise-flocons-neige_1393-271.jpg'); /* Remplace par l'URL de ton image */
-  background-size: cover; /* Ajuste pour remplir tout l'écran */
-  background-position: center; /* Centre l'image */
-  background-attachment: fixed; /* Laisse l'image fixe même en défilant */
-  color: #333; /* Garde un bon contraste pour le texte */
-  font-family: "Arial", sans-serif;
-}
-header{
-  height: auto;
-  background-color: blue;
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-/*ADDING THE SLIDER ATTRACTIONS*/
-.attractions{
-  overflow: hidden;
-  padding: 0 0;
-  white-space: nowrap;
+<style scoped>
+
+.routerview{
+  margin-top: 200px; /*HELP TO SEE THE ROUTER NAV*/
 }
 
-.attractions:hover .attractions-slider{
-  animation-play-state: paused;
-}
-
-
-.attractions-slider{
-  display: inline-block;
-  animation: 30s slide infinite linear;
-  overflow: hidden;
-  left: 0;
-  right: 0;
-
-}
-.attractions-slider img{
-  border-radius: 15px;
-  height: 20rem;
-  margin: 0 3rem;
-  transition: transform 0.5s ease-in-out, border-radius 0.3s ease-in-out;
-}
-
-.attractions-slider img:hover{
-  transform: scale(1.1);
-  border-radius: 15px;
-}
-
-@keyframes slide{
-  from{
-    transform: translateX(0);
+.navbar { /*DEFINE THE STYLE OF THE NAVBAR*/
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    font-family: "Arial", sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.1rem;
+    background-color: #FAFAFA;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
   }
-  to{
-    transform: translateX(-100%);
+.navbar-left .park-name { /*DEFINE THE STYLE FOR THE PARK NAME*/
+    font-family: "Dancing Script", cursive; 
+    font-size: 2.5rem;
+    color: #D72638;
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+    margin: 1rem;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow { /*ANIMATION OF THE NAME OF THE PARK*/
+  from {
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+  }
+  to {
+    text-shadow: 0 0 10px #FF4500, 0 0 20px #FF4500, 0 0 30px #FF4500;
   }
 }
 
-</style>
+.navbar-links{ /*STYLE POUR LES LIENS DANS LA BARRE DE NAVIGATION*/
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8rem;
+  }
+
+.navbar-links a { /*STYLE FOR THE NAVIGATION LINKS IN THE NAVBAR*/
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    transition: color 0.3s;
+    line-height: 1;
+  }
+
+.navbar-links a:hover { /*STYLE WHEN YOU HOVER ON THE LINKS IN THE NAVBAR*/
+    color: #dd5454;
+  }
+
+.navbar-right .book-now {
+    background-color: #D72638;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+.navbar-right .book-now:hover {
+    background-color: #d4b920;
+  }
+
+  
+a { /*GENERAL STYLE FOR THE NAV LINKS */
+    display: inline-block;
+    border-radius: 10%;
+    color: rgb(211, 87, 87);
+    padding: 5px;
+    margin: 10px;
+  }
+a:hover, /*STYLE WHEN YOU HOVER THE LINKS AND WHEN YOU'RE ON A ROUTER PAGE */
+a.router-link-active {
+    background-color: rgba(192, 192, 192, 0.24);
+  }
+
+div {
+    border: dashed black 1px;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+  }
+</style>   
