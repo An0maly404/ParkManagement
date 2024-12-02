@@ -9,17 +9,37 @@
             <input type="text" id="username" name="username" placeholder="maverick" required />
             <br /><br />
 
+            <!-- Email field for Login -->
+            <label v-if="isLogin">Email </label>
+            <input
+                v-if="isLogin"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="abc@example.com"
+                required
+            />
+            <br v-if="isLogin" /><br v-if="isLogin" />
+
             <label>Password </label>
             <input type="password" id="password" name="password" required />
             <br /><br />
 
-            <!-- Email field is only visible in Register mode -->
+            <!-- Rewrite Password field for Register -->
             <label v-if="!isLogin">Rewrite Password </label>
-            <input v-if="!isLogin" type="email" id="email" name="email" placeholder="abc@example.com" required />
+            <input
+                v-if="!isLogin"
+                type="password"
+                id="passverif"
+                name="passverif"
+                required
+            />
             <br v-if="!isLogin" /><br v-if="!isLogin" />
 
             <button type="reset">Reset</button>
-            <button type="submit">Submit</button>
+            <button type="submit">
+                {{ isLogin ? "Login" : "Register" }}
+            </button>
         </fieldset>
     </form>
     <br /><br />
