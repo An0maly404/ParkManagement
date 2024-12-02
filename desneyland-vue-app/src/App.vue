@@ -8,7 +8,7 @@
       <router-link to="/food">Hotels</router-link><br>
     </div>
     <div class="navbar-right">
-      <button class="book-now">BOOK NOW</button>
+      <button class="book-now">BOOK NOW !</button>
     </div>
   </nav>
   
