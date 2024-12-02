@@ -11,6 +11,13 @@
           </ul>
           <div class="tarif">
             <p>Adulte : 50-100$</p>
+            <p>Enfant : 25-35$</p>
+          </div>
+        </div>
+        <div class="box">
+          <h2>Special</h2>
+          <ul>
+            <li>Accès au parc</li>
             <li>Accès à toutes les attractions autant de fois que possible</li>
             <li>Billet pour toute la journée</li>
           </ul>
