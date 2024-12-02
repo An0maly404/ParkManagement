@@ -138,6 +138,11 @@ export default{
 
 
 <style scoped>
+.difficulty-header{
+    color: rgba(0, 0, 0, 0.363);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+}
 .attractionstype{
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

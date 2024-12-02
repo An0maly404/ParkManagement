@@ -30,7 +30,12 @@ export default{
 <style scoped>
 
 .routerview{
+  margin: 100px;
   margin-top: 200px; /*HELP TO SEE THE ROUTER NAV*/
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .navbar { /*DEFINE THE STYLE OF THE NAVBAR*/
@@ -119,7 +124,6 @@ a.router-link-active {
   }
 
 div {
-    text-align: center;
     border: dashed black 1px;
     padding: 20px;
     margin: 10px;
