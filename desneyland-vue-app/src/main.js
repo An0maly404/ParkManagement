@@ -2,14 +2,14 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue'
-import FoodItems from './FoodItems.vue'
-import AnimalCollection from './AnimalCollection.vue'
+import HotelsList from './HotelsList.vue'
+import AttractionsList from './AttractionsList.vue'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/animals', component: AnimalCollection },
-        { path: '/food', component: FoodItems },
+        { path: '/attractionslist', component: AttractionsList },
+        { path: '/hotelslist', component: HotelsList },
     ]
 });
 
