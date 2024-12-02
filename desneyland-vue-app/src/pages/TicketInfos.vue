@@ -39,6 +39,10 @@
           </div>
         </div>
       </div>
+      <!-- Bouton Book Now -->
+      <div class="button-container">
+        <a href="/loginpage" class="book-now-button">Book Now</a>
+      </div>
     </div>
   </template>
   
@@ -93,6 +97,30 @@
     width: 100%; /* Occuper toute la largeur disponible */
     box-sizing: border-box; /* Assurer que le padding est inclus dans la largeur */
   }
-  </style>
   
+  /* Conteneur du bouton */
+  .button-container {
+    margin-top: 30px; /* Espacement au-dessus du bouton */
+    text-align: center; /* Centrer le bouton horizontalement */
+  }
+  
+  /* Style du bouton */
+  .book-now-button {
+    display: inline-block;
+    background-color: #ff1e00; /* Bleu */
+    color: white; /* Texte blanc */
+    padding: 15px 30px; /* Espacement interne */
+    text-decoration: none; /* Supprimer le soulignement */
+    font-size: 1.5em; /* Taille de la police équivalente à H2 */
+    border-radius: 10px; /* Bords arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation d'interaction */
+  }
+  
+  /* Effet de survol */
+  .book-now-button:hover {
+    background-color: #b3a700; /* Bleu plus foncé */
+    transform: scale(1.05); /* Légère augmentation de la taille */
+  }
+  </style>
   
