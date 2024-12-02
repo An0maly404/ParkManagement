@@ -119,6 +119,7 @@ a.router-link-active {
   }
 
 div {
+    text-align: center;
     border: dashed black 1px;
     padding: 20px;
     margin: 10px;
