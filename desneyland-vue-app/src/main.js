@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import App from './App.vue'
-import HotelsList from './HotelsList.vue'
-import AttractionsList from './AttractionsList.vue'
+import HotelsList from './pages/HotelsList.vue'
+import AttractionsList from './pages/AttractionsList.vue'
 
 const router = createRouter({
     history: createWebHistory(),
