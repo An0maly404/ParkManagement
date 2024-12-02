@@ -1,3 +1,3 @@
 <template>
-    <h1>Sleep !</h1>
+    <h1>Food!</h1>
 </template>  

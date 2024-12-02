@@ -4,11 +4,14 @@
       <h1 class="park-name">DESNEYLAND</h1>
     </div>
     <div class="navbar-links">
+      <router-link to="/aboutpage">About</router-link>
       <router-link to="/attractionslist">Attractions</router-link>
-      <router-link to="/hotelslist">Hotels</router-link><br>
+      <router-link to="/hotelslist">Hotels</router-link>
+      <router-link to="/restaurantslist">Restaurants</router-link>
+      <router-link to="/ticketinfos">Tickets</router-link>
     </div>
     <div class="navbar-right">
-      <button class="book-now">BOOK NOW !</button>
+      <router-link class="book-now" to="/loginpage">Book Now !</router-link>
     </div>
   </nav>
   
