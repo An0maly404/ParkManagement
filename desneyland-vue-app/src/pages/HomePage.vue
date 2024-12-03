@@ -5,8 +5,8 @@
             <img v-for="(image,index) in images" :key="index" :src="image.src"  :alt="image.alt" :class="{active:index===currentIndex}">
         </div>
         <div class="carousel-controls">
-            <button @click="prevImage">Prev</button>
-            <button @click="nextImage">Next</button>
+            <button @click="prevImage"><</button>
+            <button @click="nextImage">></button>
         </div>
     </div>
 </template>  
@@ -41,7 +41,7 @@ export default{
         startCarousel(){
             this.carouselInterval=setInterval(()=>{
                 this.nextImage();
-            },4000);
+            },6000);
         },
         nextImage(){
             this.currentIndex=(this.currentIndex + 1)% this.images.length;
@@ -68,6 +68,8 @@ export default{
 }
 
 .carousel-images img{
+    width: 800px;
+    height: 500px;
     min-width: 100%;
     display: none;
     opacity: 0;
@@ -89,9 +91,9 @@ export default{
 }
 
 .carousel-controls button{
-    background-color:aliceblue;
+    background-color:rgba(128, 128, 128, 0.288);
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size:1.5rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
