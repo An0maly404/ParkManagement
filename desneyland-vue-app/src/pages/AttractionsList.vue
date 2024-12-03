@@ -1,5 +1,5 @@
 <template>
-    <h1 class="attractionstype">Attractions by Difficulty</h1>
+    <h1 class="attractionstype">ATTRACTIONS BY DIFFICULTY</h1>
     <div v-for="(group,level) in groupedAttractions" :key="level">
         <h2 class="difficulty-header">{{ level }}</h2>
         <div class="attractions">
@@ -144,6 +144,7 @@ export default{
     text-transform: uppercase;
 }
 .attractionstype{
+    color: #545ddd;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -160,6 +161,8 @@ export default{
     padding: 5px;
     background-color:rgba(221, 221, 221, 0.521);
     border-radius: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #00000080;
 }
 
 
@@ -189,13 +192,29 @@ export default{
     left: 50%;
     transform: translateX(-50%);
     max-width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+.attraction-details button{
+    background-color: #2646d7;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.attraction-details button:hover{
+    background-color: #d4b920;
 }
 
 .additional-images img{
     border-radius: 2%;
     margin: 2px;
-    width:200px;
-    height:150px;
+    width:350px;
+    height:250px;
     object-fit:cover;
 }
 </style>

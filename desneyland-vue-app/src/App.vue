@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar">
     <div class="navbar-left">
-      <h1 class="park-name">DEFUNCTLAND</h1>
+      <router-link to="/">
+        <h1 class="park-name">DEFUNCTLAND</h1>
+      </router-link>
     </div>
     <div class="navbar-links">
       <router-link to="/aboutpage">About</router-link>
@@ -31,11 +33,12 @@ export default{
 
 .routerview{
   margin: 100px;
-  margin-top: 200px; /*HELP TO SEE THE ROUTER NAV*/
+  margin-top: 220px; /*HELP TO SEE THE ROUTER NAV*/
   display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color:#eaf8fc ;
 }
 
 .navbar { /*DEFINE THE STYLE OF THE NAVBAR*/
@@ -63,6 +66,10 @@ export default{
     text-shadow: 0 0 2px #1900ff, 0 0 10px #1900ff, 0 0 20px #1900ff;
     margin: 1rem;
     animation: glow 3.5s ease-in-out infinite alternate;
+}
+
+.navbar-left a{
+  text-decoration: none;
 }
 
 @keyframes glow { /*ANIMATION OF THE NAME OF THE PARK*/
@@ -118,8 +125,9 @@ a { /*GENERAL STYLE FOR THE NAV LINKS */
     padding: 5px;
     margin: 10px;
   }
-a:hover, /*STYLE WHEN YOU HOVER THE LINKS AND WHEN YOU'RE ON A ROUTER PAGE */
-a.router-link-active {
+  
+.navbar-links a:hover, /*STYLE WHEN YOU HOVER THE LINKS AND WHEN YOU'RE ON A ROUTER PAGE */
+.navbar-links a.router-link-active {
     background-color: rgba(192, 192, 192, 0.24);
   }
 
