@@ -8,11 +8,13 @@ import HotelsList from './pages/HotelsList.vue'
 import LoginPage from './pages/LoginPage.vue'
 import RestaurantsList from './pages/RestaurantsList.vue'
 import TicketInfos from './pages/TicketInfos.vue'
+import HomePage from './pages/HomePage.vue'
 
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+        { path: '/', component: HomePage},
         { path: '/aboutpage', component: AboutPage },
         { path: '/attractionslist', component: AttractionsList },
         { path: '/hotelslist', component: HotelsList },
