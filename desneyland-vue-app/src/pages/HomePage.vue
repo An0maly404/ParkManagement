@@ -9,12 +9,30 @@
             <button @click="nextImage">></button>
         </div>
     </div>
+    <InteractiveMap :map-src="mapSrc" :points="attractionPoints"/>
 </template>  
 
 <script>
+import planImage from "@/assets/MAPPLAN1.png"
+import InteractiveMap from '@/components/InteractiveMap.vue';
+
 export default{
+    components:{
+        InteractiveMap,
+    },
     data(){
         return{
+            mapSrc:planImage,
+            attractionPoints:[
+                {
+                    x:20,
+                    y:30,
+                    details:{
+                        name:"Attraction 1",
+                        description:"Description"
+                    },
+                },
+            ],
             images:[
                 {src:require('@/assets/NEMESIS1.jpg'), alt:"Image1"},
                 {src:require('@/assets/NEMESIS2.jpg'), alt:"Image2"},
