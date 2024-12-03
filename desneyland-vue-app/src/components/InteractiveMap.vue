@@ -106,6 +106,7 @@ export default{
   height: 600px;
   transition: transform 0.3s ease;
   background: #f0f0f0;
+  z-index: 1;
 }
 
 .map img {
@@ -126,15 +127,31 @@ export default{
 }
 
 .map-controls {
+  position: absolute;
   margin-top: 1rem;
-  text-align: center;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;
 }
 
 .map-controls button {
   margin: 0 0.5rem;
-  padding: 0.5rem 1rem;
+  background: rgba(95, 95, 95, 0.726);
+  color: white;
+  border: none;
+  padding: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgb(0, 0, 0);
+  transition: background 0.3s ease;
+}
+
+.map-controls button:hover{
+    background: rgb(206, 113, 113);
 }
 
 .attraction-details {
@@ -146,5 +163,6 @@ export default{
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 3;
 }
 </style>
