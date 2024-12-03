@@ -85,7 +85,7 @@ export default{
 .navbar-links a { /*STYLE FOR THE NAVIGATION LINKS IN THE NAVBAR*/
     margin: 0 1rem;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #333;
     transition: color 0.3s;
     line-height: 1;

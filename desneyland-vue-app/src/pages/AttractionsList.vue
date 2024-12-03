@@ -150,6 +150,7 @@ export default{
 .attractions{
     display: flex;
     flex-wrap: wrap;
+    justify-content:center;
 }
 
 .attraction-card{
