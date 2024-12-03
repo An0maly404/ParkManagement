@@ -1,7 +1,7 @@
 <template>
     <h1>Welcome !</h1>
     <div class="carousel">
-        <div class="carousel-images">
+        <div class="carousel-images" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
             <img v-for="(image,index) in images" :key="index" :src="image.src"  :alt="image.alt" :class="{active:index===currentIndex}">
         </div>
         <div class="carousel-controls">
@@ -54,6 +54,7 @@ export default{
 </script>
 
 <style scoped>
+/* _________________________________________________________________AJUSTMENTS FOR THE CAROUSEL _____________________________________________________________________________*/
 .carousel{
     position: relative;
     width: 100%;
@@ -68,10 +69,11 @@ export default{
 }
 
 .carousel-images img{
+    border-radius: 5%;
     width: 800px;
     height: 500px;
     min-width: 100%;
-    display: none;
+    display: block;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
