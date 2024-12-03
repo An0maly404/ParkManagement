@@ -93,11 +93,13 @@ export default{
 
 <style scoped>
 .map-container {
+  border-radius: 10px;
   position: relative;
   width: 100%;
   max-width: 800px;
   margin: 2rem auto;
   overflow: hidden;
+  background-color: rgb(239, 255, 254);
 }
 
 .map {

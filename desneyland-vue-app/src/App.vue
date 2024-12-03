@@ -5,15 +5,25 @@
         <h1 class="park-name">DEFUNCTLAND</h1>
       </router-link>
     </div>
-    <div class="navbar-links">
+    <div class="navbar-links" v-if="!isMobileMenu">
       <router-link to="/aboutpage">About</router-link>
       <router-link to="/attractionslist">Attractions</router-link>
       <router-link to="/hotelslist">Hotels</router-link>
       <router-link to="/restaurantslist">Restaurants</router-link>
       <router-link to="/ticketinfos">Tickets</router-link>
     </div>
-    <div class="navbar-right">
+    <div class="navbar-right" v-if="!isMobileMenu">
       <router-link class="book-now" to="/loginpage">Book Now !</router-link>
+    </div>
+    <button class="mobile-menu-button" @click="toggleMenu" v-if="isMobileMenu" ref="menuButton">
+      ☰
+    </button>
+    <div class="mobile-menu" v-show="showMobileMenu" ref="mobileMenu">
+      <router-link to="/aboutpage">About</router-link>
+      <router-link to="/attractionslist">Attractions</router-link>
+      <router-link to="/hotelslist">Hotels</router-link>
+      <router-link to="/restaurantslist">Restaurants</router-link>
+      <router-link to="/ticketinfos">Tickets</router-link>
     </div>
   </nav>
   
@@ -24,7 +34,36 @@
 
 <script>
 export default{
-  name:'App',
+  data(){
+    return{
+      isMobileMenu:false,
+      showMobileMenu:false,
+    };
+  },
+  methods:{
+    toggleMenu(){
+      this.showMobileMenu=!this.showMobileMenu;
+    },
+    updateMenuVisibility(){
+      this.isMobileMenu=window.innerWidth<=1000;
+    },
+    closeMenu(event){
+      const menu=this.$refs.mobileMenu;
+      const button=this.$refs.menuButton;
+      if(menu && !menu.contains(event.target) && !button.contains(event.target)){
+        this.showMobileMenu=false;
+      }
+    },
+  },
+  mounted(){
+    this.updateMenuVisibility();
+    window.addEventListener("resize",this.updateMenuVisibility);
+    document.addEventListener("click",this.closeMenu);
+  },
+  beforeDestroy(){
+    window.removeEventListener("resize",this.updateMenuVisibility);
+    document.removeEventListener("click",this.closeMenu);
+  },
 };
 
 </script>
@@ -57,7 +96,7 @@ export default{
     background-color: #d8f4fc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    overflow: hidden;
+    overflow: visible;
   }
 .navbar-left .park-name { /*DEFINE THE STYLE FOR THE PARK NAME*/
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
@@ -89,6 +128,64 @@ export default{
     margin-right: 8rem;
   }
 
+.navbar-links,.navbar-right{
+  display: flex;
+}
+
+.mobile-menu-button{
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 2rem;
+}
+
+.mobile-menu{
+  display: none;
+  position:absolute;
+  top: 80px;
+  right: 10px;
+  background-color: #d8f4fc;
+  width: 40%;
+  box-shadow:0 4px 6px black ;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.mobile-menu[v-show="true"]{
+  display: block;
+}
+
+.mobile-menu a{
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu a:hover{
+  background-color: #eaf8fc;
+}
+
+@media(max-width: 1000px){
+  .navbar-links,.navbar-right{
+    display: none;
+  }
+
+  .mobile-menu-button{
+    display: block;
+  }
+
+  .mobile-menu{
+    display: flex;
+  }
+
+
+}
 .navbar-links a { /*STYLE FOR THE NAVIGATION LINKS IN THE NAVBAR*/
     margin: 0 1rem;
     text-decoration: none;
