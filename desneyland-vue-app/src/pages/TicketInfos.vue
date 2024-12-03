@@ -107,7 +107,7 @@
   /* Style du bouton */
   .book-now-button {
     display: inline-block;
-    background-color: #ff1e00; /* Bleu */
+    background-color: #2646d7; /* Bleu */
     color: white; /* Texte blanc */
     padding: 15px 30px; /* Espacement interne */
     text-decoration: none; /* Supprimer le soulignement */

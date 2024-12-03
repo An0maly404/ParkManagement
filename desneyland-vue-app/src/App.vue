@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="navbar-left">
-      <h1 class="park-name">DESNEYLAND</h1>
+      <h1 class="park-name">DEFUNCTLAND</h1>
     </div>
     <div class="navbar-links">
       <router-link to="/aboutpage">About</router-link>
@@ -51,26 +51,26 @@ export default{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0.1rem;
-    background-color: #FAFAFA;
+    background-color: #d8f4fc;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     overflow: hidden;
   }
 .navbar-left .park-name { /*DEFINE THE STYLE FOR THE PARK NAME*/
-    font-family: "Dancing Script", cursive; 
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     font-size: 2.5rem;
-    color: #D72638;
-    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+    color: #649bff;
+    text-shadow: 0 0 2px #1900ff, 0 0 10px #1900ff, 0 0 20px #1900ff;
     margin: 1rem;
-    animation: glow 1.5s ease-in-out infinite alternate;
+    animation: glow 3.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow { /*ANIMATION OF THE NAME OF THE PARK*/
   from {
-    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+    text-shadow: 0 0 6px #1900ff, 0 0 7px #1900ff, 0 0 6px #1900ff;
   }
   to {
-    text-shadow: 0 0 10px #FF4500, 0 0 20px #FF4500, 0 0 30px #FF4500;
+    text-shadow: 0 0 7px #0059ff, 0 0 6px #0059ff, 0 0 7px #0059ff;
   }
 }
 
@@ -85,18 +85,18 @@ export default{
 .navbar-links a { /*STYLE FOR THE NAVIGATION LINKS IN THE NAVBAR*/
     margin: 0 1rem;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #333;
     transition: color 0.3s;
     line-height: 1;
   }
 
 .navbar-links a:hover { /*STYLE WHEN YOU HOVER ON THE LINKS IN THE NAVBAR*/
-    color: #dd5454;
+    color: #545ddd;
   }
 
 .navbar-right .book-now {
-    background-color: #D72638;
+    background-color: #2646d7;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
