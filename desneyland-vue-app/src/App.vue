@@ -364,7 +364,7 @@ footer button {
 }
 
 footer button:hover {
-  background-color: #d35400;
+  background-color: #d4b920;
 }
 
 .footer-bottom {

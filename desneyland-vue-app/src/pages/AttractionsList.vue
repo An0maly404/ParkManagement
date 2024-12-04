@@ -36,59 +36,59 @@ export default{
             selectedAttraction:null,
             attractions: [
                 {
-                    name:'TOUTATIS',
-                    image: require('@/assets/TOUTATIS1.jpg'),
-                    description:'TOUTATIS l attraction phare du parc asterix',
-                    additionalImages:[require('@/assets/TOUTATIS2.jpg'),require('@/assets/TOUTATIS3.jpg')],
+                    name:'SON OF BEAST',
+                    image: require('@/assets/SONOFBEAST1.jpg'),
+                    description:'Son of Beast was a record-breaking wooden roller coaster, notable for being the first of its kind to include a vertical loop. Known for its intense speed and rough ride, it closed in 2012 due to safety concerns and high maintenance costs.',
+                    additionalImages:[require('@/assets/SONOFBEAST2.jpg'),require('@/assets/SONOFBEAST3.jpg')],
                     difficulty:'hard',
                 },
                 {
-                    name:'OZIRIS',
-                    image: require('@/assets/OZIRIS1.jpg'),
-                    description:'OZIRIS, the most impressive attraction in the park',
-                    additionalImages:[require('@/assets/OZIRIS2.jpg'),require('@/assets/OZIRIS3.jpg')],
+                    name:'THE BIG DIPPER',
+                    image: require('@/assets/BIGDIPPER1.jpg'),
+                    description:'This iconic wooden roller coaster thrilled guests with its classic out-and-back design. Operating for over 80 years, it was a centerpiece of the park until Geauga Lake’s closure in 2007.',
+                    additionalImages:[require('@/assets/BIGDIPPER2.jpg'),require('@/assets/BIGDIPPER3.jpg')],
                     difficulty:'hard',
                 },
                 {
-                    name:'OBLIVION',
-                    image: require('@/assets/OBLIVION1.jpg'),
-                    description:'OBLIVION, a jump in the void',
-                    additionalImages:[require('@/assets/OBLIVION2.jpg'),require('@/assets/OBLIVION3.jpg')],
-                    difficulty:'hard',
-                },
-                {
-                    name:'NEMESIS',
-                    image: require('@/assets/NEMESIS1.jpg'),
-                    description:'Your head will spin, spin and spin arround and arround',
-                    additionalImages:[require('@/assets/NEMESIS2.jpg'),require('@/assets/NEMESIS3.jpg')],
-                    difficulty:'hard',
-                },
-                {
-                    name:'OBLIVION',
-                    image: require('@/assets/OBLIVION1.jpg'),
-                    description:'OBLIVION, a jump in the void',
-                    additionalImages:[require('@/assets/OBLIVION2.jpg'),require('@/assets/OBLIVION3.jpg')],
+                    name:'JOURNEY TO ATLANTIS',
+                    image: require('@/assets/JOURNEYTOATLANTIS1.jpg'),
+                    description:' A hybrid water ride and coaster, Journey to Atlantis offered a mix of thrilling drops and gentle splashes. It combined storytelling and aquatic elements, making it a fan favorite before its closure.',
+                    additionalImages:[require('@/assets/JOURNEYTOATLANTIS2.jpg'),require('@/assets/JOURNEYTOATLANTIS3.jpg')],
                     difficulty:'medium',
                 },
                 {
-                    name:'NEMESIS',
-                    image: require('@/assets/NEMESIS1.jpg'),
-                    description:'Your head will spin, spin and spin arround and arround',
-                    additionalImages:[require('@/assets/NEMESIS2.jpg'),require('@/assets/NEMESIS3.jpg')],
+                    name:'TIDAL WAVE',
+                    image: require('@/assets/TIDALWAVE1.jpg'),
+                    description:'This shoot-the-chute water ride gave riders a dramatic drop into a giant wave, soaking both passengers and onlookers. It closed in 2017 to make room for new developments.',
+                    additionalImages:[require('@/assets/TIDALWAVE2.jpg'),require('@/assets/TIDALWAVE3.jpg')],
                     difficulty:'medium',
                 },
                 {
-                    name:'TOUTATIS',
-                    image: require('@/assets/TOUTATIS1.jpg'),
-                    description:'TOUTATIS l attraction phare du parc asterix',
-                    additionalImages:[require('@/assets/TOUTATIS2.jpg'),require('@/assets/TOUTATIS3.jpg')],
+                    name:'DISASTER TRANSPORT',
+                    image: require('@/assets/DISASTERTRANSPORT1.jpg'),
+                    description:'Disaster Transport was an indoor roller coaster themed as a futuristic transport gone awry. Its mix of mild thrills and dark ride elements made it a unique experience before its demolition in 2012.',
+                    additionalImages:[require('@/assets/DISASTERTRANSPORT2.jpg'),require('@/assets/DISASTERTRANSPORT3.jpg')],
+                    difficulty:'medium',
+                },
+                {
+                    name:'SKYRIDE',
+                    image: require('@/assets/SKYRIDE1.jpg'),
+                    description:'A classic cable car attraction that offered scenic views of the park from above. It was a relaxing and nostalgic ride before its closure to accommodate newer attractions.',
+                    additionalImages:[require('@/assets/SKYRIDE2.jpg'),require('@/assets/SKYRIDE3.jpg')],
                     difficulty:'easy',
                 },
                 {
-                    name:'OZIRIS',
-                    image: require('@/assets/OZIRIS1.jpg'),
-                    description:'OZIRIS, the most impressive attraction in the park',
-                    additionalImages:[require('@/assets/OZIRIS2.jpg'),require('@/assets/OZIRIS3.jpg')],
+                    name:'ASTROWHEEL',
+                    image: require('@/assets/ASTROWHEEL1.jpg'),
+                    description:'A Ferris wheel providing gentle thrills and panoramic views, it was a staple of AstroWorld until the park shut down in 2005.',
+                    additionalImages:[require('@/assets/ASTROWHEEL2.jpg'),require('@/assets/ASTROWHEEL3.jpg')],
+                    difficulty:'easy',
+                },
+                {
+                    name:'SUBMARINE VOYAGE',
+                    image: require('@/assets/SUBMARINEVOYAGE1.jpg'),
+                    description:'This underwater adventure immersed guests in a simulated deep-sea journey. The attraction was beloved for its creativity but closed in 1998 to make way for modern rides.',
+                    additionalImages:[require('@/assets/SUBMARINEVOYAGE2.jpg'),require('@/assets/SUBMARINEVOYAGE3.jpg')],
                     difficulty:'easy',
                 },
             ]
@@ -182,7 +182,7 @@ export default{
 
 
 .attraction-details{
-    margin-top: 200px;
+    margin-top: 110px;
     background:white;
     padding: 20px;
     border-radius: 8px;
