@@ -1,5 +1,5 @@
 <template>
-    <h1>Welcome !</h1>
+    <h1>Welcome to DEFUNCTLAND, where your dream attractions are created !</h1>
     <div class="carousel">
         <div class="carousel-images" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
             <img v-for="(image,index) in images" :key="index" :src="image.src"  :alt="image.alt" :class="{active:index===currentIndex}">
@@ -9,7 +9,23 @@
             <button @click="nextImage">></button>
         </div>
     </div>
+    <h3>DEFUNCTLAND is much more than just an amusement park.
+     Discover a world of adventure, magic, and fun for the whole family. 
+     With thrilling attractions, captivating shows, and immersive experiences, 
+     your day will be unforgettable !</h3>
+    <router-link class="book-now" to="/aboutpage">DISCOVER MORE !</router-link>
+    <h2> Opening Hours</h2>
+    <p>Monday: 9-18</p>
+    <p>Tuesday: Closed</p>
+    <p>Wednesday: 9-18</p>
+    <p>Thursday: 9-18</p>
+    <p>Friday: 9-20</p>
+    <p>Saturday: 9-20</p>
+    <p>Sunday: 9-20</p>
+    <p></p>
+    <h1>Here is our map !</h1>
     <InteractiveMap :map-src="mapSrc" :points="attractionPoints"/>
+    <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
 </template>  
 
 <script>
@@ -135,10 +151,24 @@ export default{
     padding: 0.5rem 1rem;
 }
 
+.book-now{
+    background-color: #2646d7;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
 
+.book-now:hover{
+    background-color: #d4b920;
+}
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
-h1{
+h1, h2, p,h3{
     font-family:"Lilita One", sans-serif;
 }
 </style>

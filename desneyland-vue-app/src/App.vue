@@ -13,7 +13,7 @@
       <router-link to="/ticketinfos">Tickets</router-link>
     </div>
     <div class="navbar-right" v-if="!isMobileMenu">
-      <router-link class="book-now" to="/loginpage">Book Now !</router-link>
+      <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
     </div>
     <button class="mobile-menu-button" @click="toggleMenu" v-show="isMobileMenu" ref="menuButton">
       ☰
@@ -208,6 +208,7 @@ export default{
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-decoration: none;
   }
 
 .navbar-right .book-now:hover {
