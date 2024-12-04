@@ -60,7 +60,7 @@ export default{
     window.addEventListener("resize",this.updateMenuVisibility);
     document.addEventListener("click",this.closeMenu);
   },
-  beforeDestroy(){
+  beforeUnmount(){
     window.removeEventListener("resize",this.updateMenuVisibility);
     document.removeEventListener("click",this.closeMenu);
   },
