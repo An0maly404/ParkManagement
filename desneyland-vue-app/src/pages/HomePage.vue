@@ -28,7 +28,23 @@ export default{
                     x:20,
                     y:30,
                     details:{
+                        name:"Attraction 2",
+                        description:"Description"
+                    },
+                },
+                {
+                    x:30,
+                    y:20,
+                    details:{
                         name:"Attraction 1",
+                        description:"Description"
+                    },
+                },
+                {
+                    x:50,
+                    y:10,
+                    details:{
+                        name:"Attraction 3",
                         description:"Description"
                     },
                 },
@@ -117,5 +133,12 @@ export default{
     font-size:1.5rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+h1{
+    font-family:"Lilita One", sans-serif;
 }
 </style>

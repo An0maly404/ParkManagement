@@ -92,6 +92,9 @@ export default{
 </script>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 .map-container {
   border-radius: 10px;
   position: relative;
@@ -122,7 +125,7 @@ export default{
   position: absolute;
   width: 20px;
   height: 20px;
-  background: red;
+  background: rgb(17, 0, 255);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
@@ -153,10 +156,11 @@ export default{
 }
 
 .map-controls button:hover{
-    background: rgb(206, 113, 113);
+    background: rgb(174, 220, 238);
 }
 
 .attraction-details {
+    font-family: "Lilita One", sans-serif;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -166,5 +170,20 @@ export default{
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 3;
+}
+
+.attraction-details button{
+    background-color: #2646d7;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.attraction-details button:hover{
+    background-color: #d4b920;
 }
 </style>

@@ -15,7 +15,7 @@
     <div class="navbar-right" v-if="!isMobileMenu">
       <router-link class="book-now" to="/loginpage">Book Now !</router-link>
     </div>
-    <button class="mobile-menu-button" @click="toggleMenu" v-if="isMobileMenu" ref="menuButton">
+    <button class="mobile-menu-button" @click="toggleMenu" v-show="isMobileMenu" ref="menuButton">
       ☰
     </button>
     <div class="mobile-menu" v-show="showMobileMenu" ref="mobileMenu">
@@ -186,7 +186,7 @@ export default{
 
 
 }
-.navbar-links a { /*STYLE FOR THE NAVIGATION LINKS IN THE NAVBAR*/
+.navbar-links a,.mobile-menu a { /*STYLE FOR THE NAVIGATION LINKS IN THE NAVBAR*/
     margin: 0 1rem;
     text-decoration: none;
     font-size: 1.25rem;
@@ -195,7 +195,7 @@ export default{
     line-height: 1;
   }
 
-.navbar-links a:hover { /*STYLE WHEN YOU HOVER ON THE LINKS IN THE NAVBAR*/
+.navbar-links a:hover,.mobile-menu a:hover { /*STYLE WHEN YOU HOVER ON THE LINKS IN THE NAVBAR*/
     color: #545ddd;
   }
 
