@@ -23,7 +23,8 @@ export default{
                 {
                     id:1,
                     name:"HAUNTED HOTEL",
-                    image:require('@/assets/ASTROWHEEL1.jpg'),
+                    image:require('@/assets/HOTEL1.jpg'),
+                    additionnalimages:[require('@/assets/HOTEL11.jpg'),require('@/assets/HOTEL12.jpg')],
                     description:"Description Hotel 1",
                     price:150,
                 },
@@ -69,7 +70,7 @@ export default{
     border-radius: 8px;
     padding: 10px;
     text-align: center;
-    width: 300px;
+    width: 400px;
     transition: transform 0.3s ease;
 }
 
