@@ -1,126 +1,193 @@
 <template>
     <div>
       <h1>Information !</h1>
+      <!-- Calendrier -->
+      <div class="calendar-container">
+        <label for="date">Choisissez une date :</label>
+        <input type="date" id="date" :min="minDate" v-model="selectedDate" @change="updatePrices" />
+      </div>
+  
+      <!-- Conteneur principal -->
       <div class="container">
-        <div class="box">
-          <h2>Basic</h2>
-          <ul>
-            <li>Accès au parc</li>
-            <li>Acces à toutes les attractions une fois</li>
-            <li>Billet pour toute la journée</li>
+        <div
+          class="box"
+          v-for="(ticketType, index) in ticketTypes"
+          :key="index"
+        >
+          <h2 class="ticket-title">{{ ticketType.name }}</h2>
+          <ul class="ticket-features">
+            <li v-for="feature in ticketType.features" :key="feature">{{ feature }}</li>
           </ul>
           <div class="tarif">
-            <p>Adulte : 50-100$</p>
-            <p>Enfant : 25-35$</p>
+            <p>Adulte : {{ ticketType.adultPrice }}€</p>
+            <p>Enfant : {{ ticketType.childPrice }}€</p>
           </div>
-        </div>
-        <div class="box">
-          <h2>Special</h2>
-          <ul>
-            <li>Accès au parc</li>
-            <li>Accès à toutes les attractions autant de fois que possible</li>
-            <li>Billet pour toute la journée</li>
-          </ul>
-          <div class="tarif">
-            <p>Adulte : 100-200$</p>
-            <p>Enfant : 50-100$</p>
-          </div>
-        </div>
-        <div class="box">
-          <h2>Premium</h2>
-          <ul>
-            <li>Accès au parc</li>
-            <li>Repas inclus</li>
-            <li>Billets coupe file</li>
-          </ul>
-          <div class="tarif">
-            <p>Adulte : 500-1000$</p>
-            <p>Enfant : 250-350$</p>
+          <!-- Contrôles pour les tickets -->
+          <div class="quantity-controls">
+            <p>Billets adulte :</p>
+            <button @click="decreaseQuantity(ticketType, 'adult')" :disabled="ticketType.adultQuantity === 0">-</button>
+            <span>{{ ticketType.adultQuantity }}</span>
+            <button @click="increaseQuantity(ticketType, 'adult')">+</button>
+  
+            <p>Billets enfant :</p>
+            <button @click="decreaseQuantity(ticketType, 'child')" :disabled="ticketType.childQuantity === 0">-</button>
+            <span>{{ ticketType.childQuantity }}</span>
+            <button @click="increaseQuantity(ticketType, 'child')">+</button>
           </div>
         </div>
       </div>
-      <!-- Bouton Book Now -->
-      <div class="button-container">
-        <a href="/loginpage" class="book-now-button">Book Now</a>
+  
+      <!-- Résumé -->
+      <div class="summary-container" v-if="totalPrice > 0">
+        <h3>Résumé de votre réservation :</h3>
+        <ul>
+          <li v-for="ticket in selectedTickets" :key="ticket.name">
+            {{ ticket.name }} - Adulte : {{ ticket.adultQuantity }} × {{ ticket.adultPrice }}€, Enfant : {{ ticket.childQuantity }} × {{ ticket.childPrice }}€
+          </li>
+        </ul>
+        <p><strong>Total : {{ totalPrice }} €</strong></p>
+      </div>
+  
+      <!-- Bouton de paiement -->
+      <div class="payment-container">
+        <button @click="proceedToPayment" :disabled="totalPrice === 0">Payer</button>
       </div>
     </div>
   </template>
   
   <script>
   export default {
-    name: "InformationBoxes",
+    name: "BuyTickets",
+    data() {
+      const today = new Date();
+      const minDate = today.toISOString().split("T")[0];
+  
+      return {
+        minDate,
+        selectedDate: minDate,
+        ticketTypes: [
+          {
+            name: "Basic",
+            features: ["Accès au parc", "Accès à toutes les attractions une fois", "Billet pour toute la journée"],
+            adultPrice: 50,
+            childPrice: 25,
+            adultQuantity: 0,
+            childQuantity: 0,
+          },
+          {
+            name: "Special",
+            features: ["Accès au parc", "Attractions illimitées", "Billet pour toute la journée"],
+            adultPrice: 100,
+            childPrice: 50,
+            adultQuantity: 0,
+            childQuantity: 0,
+          },
+          {
+            name: "Premium",
+            features: ["Accès au parc", "Repas inclus", "Billets coupe-file"],
+            adultPrice: 500,
+            childPrice: 250,
+            adultQuantity: 0,
+            childQuantity: 0,
+          },
+        ],
+      };
+    },
+    computed: {
+      selectedTickets() {
+        return this.ticketTypes.filter(ticket => ticket.adultQuantity > 0 || ticket.childQuantity > 0);
+      },
+      totalPrice() {
+        return this.ticketTypes.reduce(
+          (total, ticket) =>
+            total +
+            ticket.adultQuantity * ticket.adultPrice +
+            ticket.childQuantity * ticket.childPrice,
+          0
+        );
+      },
+    },
+    methods: {
+      updatePrices() {
+        const selectedDate = new Date(this.selectedDate);
+        const isWeekend = selectedDate.getDay() === 0 || selectedDate.getDay() === 6;
+  
+        this.ticketTypes = this.ticketTypes.map(ticket => ({
+          ...ticket,
+          adultPrice: isWeekend ? ticket.adultPrice + 50 : ticket.adultPrice - 50,
+          childPrice: isWeekend ? ticket.childPrice + 25 : ticket.childPrice - 25,
+        }));
+      },
+      increaseQuantity(ticketType, category) {
+        if (category === "adult") ticketType.adultQuantity++;
+        if (category === "child") ticketType.childQuantity++;
+      },
+      decreaseQuantity(ticketType, category) {
+        if (category === "adult" && ticketType.adultQuantity > 0) ticketType.adultQuantity--;
+        if (category === "child" && ticketType.childQuantity > 0) ticketType.childQuantity--;
+      },
+      proceedToPayment() {
+        alert(`Paiement de ${this.totalPrice} € en cours...`);
+      },
+    },
   };
   </script>
   
   <style scoped>
-  /* Conteneur principal */
+  /* Styles basés sur l'architecture fournie */
   .container {
     display: flex;
-    justify-content: space-between; /* Espace égal entre les blocs */
-    align-items: flex-start; /* Alignement vertical en haut */
-    gap: 20px; /* Espacement uniforme entre les blocs */
-    width: 100%; /* Utiliser toute la largeur disponible */
+    justify-content: space-between;
+    gap: 20px;
   }
   
-  /* Style des blocs individuels */
   .box {
-    background-color: #d3d3d3; /* Gris clair */
-    border-radius: 10px; /* Bords arrondis */
-    width: 300px; /* Largeur fixe */
-    padding: 20px; /* Espacement interne */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    display: flex;
-    flex-direction: column; /* Alignement vertical du contenu */
-    justify-content: flex-start; /* Alignement des éléments au début */
-    align-items: flex-start; /* Alignement des éléments à gauche */
-    text-align: left; /* Alignement du texte à gauche */
-    box-sizing: border-box; /* Inclure le padding dans la largeur/hauteur */
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Style pour les listes */
-  ul {
-    margin: 10px 0 0; /* Espacement au-dessus de la liste */
-    padding-left: 20px; /* Indentation des puces */
-    list-style-type: disc; /* Type de puce */
+  /* Centrer les titres */
+  .ticket-title {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
   }
   
-  li {
-    margin-bottom: 5px; /* Espacement entre les éléments de la liste */
+  /* Aligner les descriptions et les tarifs à gauche */
+  .ticket-features {
+    text-align: left;
+    margin: 0;
+    padding-left: 20px;
   }
   
-  /* Style pour la section tarif */
+  .ticket-features li {
+    margin-bottom: 5px;
+  }
+  
   .tarif {
-    background-color: #a9a9a9; /* Gris plus foncé */
-    border-radius: 10px; /* Bords arrondis */
-    padding: 10px; /* Espacement interne */
-    margin-top: 20px; /* Espacement au-dessus */
-    width: 100%; /* Occuper toute la largeur disponible */
-    box-sizing: border-box; /* Assurer que le padding est inclus dans la largeur */
+    text-align: left;
+    margin-top: 10px;
   }
   
-  /* Conteneur du bouton */
-  .button-container {
-    margin-top: 30px; /* Espacement au-dessus du bouton */
-    text-align: center; /* Centrer le bouton horizontalement */
+  .quantity-controls {
+    margin-top: 20px;
   }
   
-  /* Style du bouton */
-  .book-now-button {
-    display: inline-block;
-    background-color: #2646d7; /* Bleu */
-    color: white; /* Texte blanc */
-    padding: 15px 30px; /* Espacement interne */
-    text-decoration: none; /* Supprimer le soulignement */
-    font-size: 1.5em; /* Taille de la police équivalente à H2 */
-    border-radius: 10px; /* Bords arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation d'interaction */
+  button {
+    margin: 5px;
+    padding: 5px 10px;
   }
   
-  /* Effet de survol */
-  .book-now-button:hover {
-    background-color: #b3a700; /* Bleu plus foncé */
-    transform: scale(1.05); /* Légère augmentation de la taille */
+  .summary-container {
+    margin-top: 30px;
+  }
+  
+  .payment-container {
+    text-align: center;
+    margin-top: 20px;
   }
   </style>
   
