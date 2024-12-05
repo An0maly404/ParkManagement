@@ -9,6 +9,8 @@ import LoginPage from './pages/LoginPage.vue'
 import RestaurantsList from './pages/RestaurantsList.vue'
 import TicketInfos from './pages/TicketInfos.vue'
 import HomePage from './pages/HomePage.vue'
+import TicketsOwned from './pages/TicketsOwned.vue'
+import BuyTickets from './pages/BuyTickets.vue'
 
 
 const router = createRouter({
@@ -21,6 +23,8 @@ const router = createRouter({
         { path: '/loginpage', component: LoginPage },
         { path: '/restaurantsList', component: RestaurantsList },
         { path: '/ticketinfos', component: TicketInfos },
+        { path: '/ticketsOwned', component: TicketsOwned},
+        { path: '/buytickets', component: BuyTickets}
     ]
 });
 

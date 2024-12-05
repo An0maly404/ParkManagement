@@ -38,7 +38,7 @@
 
             <button type="reset">Reset</button>
             <button type="submit">
-              <a href="/TicketInfos">{{ isLogin ? "Login" : "Register" }}</a> 
+              <a href="/TicketsOwned">{{ isLogin ? "Login" : "Register" }}</a> 
             </button>
         </fieldset>
     </form>
