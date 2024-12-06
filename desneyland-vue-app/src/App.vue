@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="navbar-left">
       <router-link to="/">
-        <h1 class="park-name">DEFUNCTLAND</h1>
+        <img class="park-logo" :src="require('@/assets/LOGO.png')" alt="Defunctland Logo">
       </router-link>
     </div>
     <div class="navbar-links" v-if="!isMobileMenu">
@@ -125,7 +125,7 @@ export default{
 
 .routerview{
   margin: 100px;
-  margin-top: 170px; /*HELP TO SEE THE ROUTER NAV*/
+  margin-top: 200px; /*HELP TO SEE THE ROUTER NAV*/
   display: block;
   justify-content: center;
   align-items: center;
@@ -134,7 +134,7 @@ export default{
 }
 
 .navbar { /*DEFINE THE STYLE OF THE NAVBAR*/
-    height: 125px;
+    height: 155px;
     left: 0;
     top: 0;
     right: 0;
@@ -152,13 +152,11 @@ export default{
     z-index: 1000;
     overflow: visible;
   }
-.navbar-left .park-name { /*DEFINE THE STYLE FOR THE PARK NAME*/
-    font-family:"Lilita One", sans-serif ; 
-    font-size: 2.5rem;
-    color: #649bff;
-    text-shadow: 0 0 2px #1900ff, 0 0 10px #1900ff, 0 0 20px #1900ff;
-    margin: 1rem;
-    animation: glow 3.5s ease-in-out infinite alternate;
+
+.park-logo{
+  height: 190px;
+  width: 380px;
+  margin-left: -30px;
 }
 
 .navbar-left a{
@@ -284,7 +282,6 @@ a { /*GENERAL STYLE FOR THE NAV LINKS */
   }
 
 div {
-    border: dashed black 1px;
     padding: 20px;
     margin: 10px;
     display: inline-block;
