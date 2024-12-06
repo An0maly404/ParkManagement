@@ -13,7 +13,7 @@
             <br>
             <p class="price"><strong>Price:</strong>${{ selectedHotel.price }}</p>
             <div class="additionnal-images">
-                <h4>Additionnal Images</h4>
+                <h4>Additionnal Imagesssssssss</h4>
                 <div class="images-container">
                     <img v-for="(img,index) in selectedHotel.additionnalimages" :key="index" :src="img" :alt="`Image ${index + 1} of ${selectedHotel.name}`">
                 </div>
