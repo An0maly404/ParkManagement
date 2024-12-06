@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import planImage from "@/assets/MAPPLAN1.png"
+import planImage from "@/assets/MAP1.jpg"
 import InteractiveMap from '@/components/InteractiveMap.vue';
 
 export default {
