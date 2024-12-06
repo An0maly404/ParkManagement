@@ -6,8 +6,8 @@
                 :class="{ active: index === currentIndex }">
         </div>
         <div class="carousel-controls">
-            <button @click="prevImage"> </button>
-                    <button @click="nextImage">></button>
+            <button @click="prevImage">&lt;</button>
+            <button @click="nextImage">&gt;</button>
         </div>
     </div>
     <h3>DEFUNCTLAND is much more than just an amusement park.
@@ -26,6 +26,8 @@
     <p></p>
     <h1>Here is our map !</h1>
     <InteractiveMap :map-src="mapSrc" :points="attractionPoints" />
+    <button @click="downloadImage">Download Map</button>
+    <br>
     <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
 </template>
 
@@ -67,9 +69,9 @@ export default {
                 },
             ],
             images: [
-                { src: require('@/assets/NEMESIS1.jpg'), alt: "Image1" },
-                { src: require('@/assets/NEMESIS2.jpg'), alt: "Image2" },
-                { src: require('@/assets/NEMESIS3.jpg'), alt: "Image3" },
+                { src: require('@/assets/WINTER1.jpg'), alt: "Image1" },
+                { src: require('@/assets/WINTER2.jpg'), alt: "Image2" },
+                { src: require('@/assets/WINTER3.jpg'), alt: "Image3" },
             ],
             currentIndex: 0,
         };
@@ -86,6 +88,15 @@ export default {
                 this.nextImage();
             }, 6000);
         },
+        downloadImage(){
+            const imageUrl=require('@/assets/NEMESIS1.jpg');
+            const link = document.createElement('a');
+            link.href=imageUrl;
+            link.download='map-image.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        },
     },
     mounted() {
         this.startCarousel();
@@ -101,7 +112,7 @@ export default {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 1000px;
+    max-width: 936px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -113,8 +124,8 @@ export default {
 
 .carousel-images img {
     border-radius: 5%;
-    width: 1000px;
-    height: 700px;
+    width: 936px;
+    height: 504px;
     min-width: 100%;
     display: block;
     opacity: 0;
@@ -167,5 +178,23 @@ h2,
 p,
 h3 {
     font-family: "Lilita One", sans-serif;
+}
+
+button{
+    font-family: "Lilita One", sans-serif ;
+    background-color: #2646d7;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    background-color: #d4b920;
 }
 </style>

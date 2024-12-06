@@ -153,7 +153,7 @@ export default{
     overflow: visible;
   }
 .navbar-left .park-name { /*DEFINE THE STYLE FOR THE PARK NAME*/
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-family:"Lilita One", sans-serif ; 
     font-size: 2.5rem;
     color: #649bff;
     text-shadow: 0 0 2px #1900ff, 0 0 10px #1900ff, 0 0 20px #1900ff;
