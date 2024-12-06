@@ -101,7 +101,7 @@ export default {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -113,8 +113,8 @@ export default {
 
 .carousel-images img {
     border-radius: 5%;
-    width: 800px;
-    height: 500px;
+    width: 1000px;
+    height: 700px;
     min-width: 100%;
     display: block;
     opacity: 0;

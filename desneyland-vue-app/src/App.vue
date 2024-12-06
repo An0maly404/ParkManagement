@@ -125,7 +125,7 @@ export default{
 
 .routerview{
   margin: 100px;
-  margin-top: 220px; /*HELP TO SEE THE ROUTER NAV*/
+  margin-top: 170px; /*HELP TO SEE THE ROUTER NAV*/
   display: block;
   justify-content: center;
   align-items: center;
@@ -134,6 +134,7 @@ export default{
 }
 
 .navbar { /*DEFINE THE STYLE OF THE NAVBAR*/
+    height: 125px;
     left: 0;
     top: 0;
     right: 0;

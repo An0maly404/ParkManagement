@@ -1,41 +1,41 @@
 <template>
     <h1 class="attractionstype">RESTAURANTS BY CUISINE TYPE</h1>
-  
-    <div v-for="(group, cuisine) in groupedRestaurants" :key="cuisine">
-      <h2 class="difficulty-header">{{ cuisine }}</h2>
-      <div class="attractions">
-        <div
-          v-for="(restaurant) in group"
-          :key="restaurant.name"
-          class="restaurant-wrapper"
-        >
-          <!-- Carte du restaurant -->
-          <div class="attraction-card" @click="selectRestaurant(restaurant)">
-            <img
-              :src="restaurant.image"
-              :alt="restaurant.name"
-              class="attraction-image"
-            />
-            <h3>{{ restaurant.name }}</h3>
-          </div>
-  
-          <!-- Détails du restaurant, affichés juste en dessous de la carte sélectionnée -->
+    <div class="categories-container">
+      <div v-for="(group, cuisine) in groupedRestaurants" :key="cuisine" class="class-restaurant">
+        <h2 class="difficulty-header">{{ cuisine }}</h2>
+        <div class="attractions">
           <div
-            v-if="selectedRestaurant && selectedRestaurant.name === restaurant.name"
-            class="attraction-details"
-            :ref="'detailSection_' + restaurant.name"
+            v-for="(restaurant) in group"
+            :key="restaurant.name"
+            class="restaurant-wrapper"
           >
-            <h2>{{ selectedRestaurant.name }}</h2>
-            <p>{{ selectedRestaurant.description }}</p>
-            <div class="additional-images">
+            <!-- Carte du restaurant -->
+            <div class="attraction-card" @click="selectRestaurant(restaurant)">
               <img
-                v-for="(image, idx) in selectedRestaurant.additionalImages"
-                :key="idx"
-                :src="image"
-                :alt="selectedRestaurant.name + ' additional image ' + (idx + 1)"
+                :src="restaurant.image"
+                :alt="restaurant.name"
+                class="attraction-image"
               />
+              <h3>{{ restaurant.name }}</h3>
             </div>
-            <button @click="closeDetails">Close</button>
+    
+            <!-- Détails du restaurant, affichés juste en dessous de la carte sélectionnée -->
+            <div
+              v-if="selectedRestaurant && selectedRestaurant.name === restaurant.name"
+              class="attraction-details"
+              :ref="'detailSection_' + restaurant.name"
+            >
+              <h2>{{ selectedRestaurant.name }}</h2>
+              <p>{{ selectedRestaurant.description }}</p>
+              <div class="additional-images">
+                <img
+                  v-for="(image, idx) in selectedRestaurant.additionalImages"
+                  :key="idx"
+                  :src="image"
+                  :alt="selectedRestaurant.name + ' additional image ' + (idx + 1)"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -109,6 +109,21 @@
   </script>
   
   <style scoped>
+.class-restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  flex: 1; /* Permet de répartir l'espace également entre les colonnes */
+}
+
+.categories-container {
+  display: flex;
+  justify-content: center; /* Aligner au centre horizontalement */
+  gap: 30px; /* Espacement entre les catégories */
+  flex-wrap: wrap; /* Gérer l'affichage responsive */
+}
+
   .difficulty-header {
     color: rgba(0, 0, 0, 0.363);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -163,7 +178,7 @@
   
   .attraction-details {
     margin-top: 10px;
-    background: white;
+    background: rgba(221, 221, 221, 0.521);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
