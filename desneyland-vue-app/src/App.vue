@@ -289,23 +289,6 @@ div {
     display: inline-block;
   }
 
-button{
-    background-color: #2646d7;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-}
-
-button:hover{
-  background-color: #d4b920;
-}
-
-
 /*__________________________________________FOOTER____________________________________*/
 .footer {
   background-color: #d8f4fc;
@@ -371,7 +354,18 @@ footer input {
   border-radius: 4px;
 }
 
+footer button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #2646d7;
+  color: #ecf0f1;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
+footer button:hover {
+  background-color: #d4b920;
+}
 
 .footer-bottom {
   text-align: center;
