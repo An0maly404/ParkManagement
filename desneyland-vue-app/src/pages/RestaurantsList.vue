@@ -5,7 +5,7 @@
       <h2 class="difficulty-header">{{ cuisine }}</h2>
       <div class="attractions">
         <div
-          v-for="(restaurant, index) in group"
+          v-for="(restaurant) in group"
           :key="restaurant.name"
           class="restaurant-wrapper"
         >
