@@ -1,4 +1,9 @@
 <template>
+    <h1>HOTELS</h1>
+    <p>Step into the hauntingly beautiful world of abandoned hotels, silent witnesses to bygone eras and untold mysteries. Each hotel in Defectland holds a unique story, blending faded luxury with unsettling events, offering an immersive experience of history and chills.
+    Behind their crumbling facades, overgrown with nature, these forgotten places whisper tales of their golden days, their sudden decline, and the legends that surround them. Whether you’re a history enthusiast, a curious explorer, or a thrill-seeker, Defectland’s hotels are sure to captivate your imagination. </p>
+    <br>
+    <p>Click on a hotel to uncover its secrets and dive into its fascinating story. Will you dare to explore these places haunted by the past?</p>
     <div class="hotels-container">
         <div class="hotel-cards">
             <div v-for="hotel in hotels" :key="hotel.id" class="hotel-card" @click="selectHotel(hotel)">
@@ -20,6 +25,10 @@
             </div>
         </div>
     </div>
+    <p>If you're not attracted by our hotels, you can have a look to other hotel nearby</p>
+    <a href="https://www.airbnb.co.uk/">You can search here</a>
+    <h2>See you soon on Defunctland !</h2>
+    <router-link class="book-now" to="/loginpage">BOOK NOW</router-link>
 </template>  
 
 <script>
@@ -55,7 +64,7 @@ export default{
 };
 </script>
 
-<style>
+<style scoped>
 .hotels-container {
   display: flex;
   flex-direction: column;
@@ -101,9 +110,9 @@ export default{
   justify-content: center;
 }
 
-.hotel-details p{
+p{
     width: auto;
-    width: 500px;
+    width: 700px;
     margin: 0 auto;
     text-align: center;
 }
@@ -142,5 +151,21 @@ export default{
     transform: scale(1.1);
 }
 
+.book-now{
+    background-color: #2646d7;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+
+.book-now:hover {
+    background-color: #d4b920;
+}
 
 </style>
