@@ -86,13 +86,13 @@ export default {
                 }
                 console.error(error);
             }
-        },
-        resetForm() {
-            this.username = "";
-            this.password = "";
-            this.passwordVerification = "";
-        },
     },
+    resetForm() {
+        this.username = "";
+        this.password = "";
+        this.passwordVerification = "";
+    },
+},
 };
 </script>
 

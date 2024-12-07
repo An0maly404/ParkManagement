@@ -27,11 +27,7 @@
 
     <!-- Conteneur principal -->
     <div class="container">
-      <div
-        class="box"
-        v-for="(ticketType, index) in ticketTypes"
-        :key="index"
-      >
+      <div class="box" v-for="(ticketType, index) in ticketTypes" :key="index">
         <h2 class="ticket-title">{{ ticketType.name }}</h2>
         <ul class="ticket-features">
           <li v-for="feature in ticketType.features" :key="feature">{{ feature }}</li>
@@ -60,12 +56,14 @@
       <h3>Résumé de votre réservation :</h3>
       <ul>
         <li v-for="ticket in selectedTickets" :key="ticket.name">
-          {{ ticket.name }} - Adulte : {{ ticket.adultQuantity }} × {{ ticket.adultPrice }}€, Enfant : {{ ticket.childQuantity }} × {{ ticket.childPrice }}€
+          {{ ticket.name }} - Adulte : {{ ticket.adultQuantity }} × {{ ticket.adultPrice }}€, Enfant : {{
+            ticket.childQuantity }} × {{ ticket.childPrice }}€
         </li>
       </ul>
       <div v-if="hotelChoice">
         <ul>
-          <li>Coût de l'hôtel ({{ hotelChoice.name }} - {{ hotelChoice.pricePerDay }}€ par jour) : {{ hotelTotalPrice }}€</li>
+          <li>Coût de l'hôtel ({{ hotelChoice.name }} - {{ hotelChoice.pricePerDay }}€ par jour) : {{ hotelTotalPrice
+            }}€</li>
         </ul>
       </div>
       <p><strong>Total : {{ totalPrice }} €</strong></p>
@@ -173,8 +171,52 @@ export default {
     updateTotal() {
       // Trigger total price computation
     },
-    proceedToPayment() {
-      alert(`Paiement de ${this.totalPrice} € en cours...`);
+    async proceedToPayment() {
+      const currentUser = localStorage.getItem("loggedInUser"); // Get the logged-in user
+      if (!currentUser) {
+        alert("You must be logged in to buy tickets!");
+        return;
+      }
+
+      const ticketDetails = this.ticketTypes.map(ticket => ({
+        name: ticket.name,
+        adultQuantity: ticket.adultQuantity,
+        childQuantity: ticket.childQuantity,
+        adultPrice: ticket.adultPrice,
+        childPrice: ticket.childPrice,
+      })).filter(ticket => ticket.adultQuantity > 0 || ticket.childQuantity > 0);
+
+      if (ticketDetails.length === 0) {
+        alert("Please select at least one ticket!");
+        return;
+      }
+
+      const payload = {
+        username: currentUser,
+        numberOfDays: this.numberOfDays,
+        hotelChoice: this.hotelChoice ? this.hotelChoice.name : "None",
+        ticketDetails,
+        totalPrice: this.totalPrice,
+      };
+
+      try {
+        const response = await fetch("http://localhost:3000/tickets", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          alert("Ticket purchased successfully!");
+          this.$router.push("/TicketsOwned"); // Redirect to TicketsOwned page
+        } else {
+          const errorMessage = await response.text();
+          alert(`Error saving ticket: ${errorMessage}`);
+        }
+      } catch (error) {
+        console.error("Error saving ticket:", error);
+        alert("Failed to save ticket. Please try again.");
+      }
     },
   },
 };
