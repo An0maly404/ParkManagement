@@ -12,10 +12,15 @@ app.get('/users', (req, res) => {
 });
 
 app.post('/users', (req, res) => {
+  const existingUser = users.find(user => user.name === req.body.name);
+  if (existingUser) {
+    return res.status(400).send("Username already taken.");
+  }
   const user = { name: req.body.name, password: req.body.password };
   users.push(user);
-  res.status(201).send();
+  res.status(201).send("User registered successfully.");
 });
+
 
 app.post('/users/login', (req, res) => {
   const user = users.find(user => user.name === req.body.name);
