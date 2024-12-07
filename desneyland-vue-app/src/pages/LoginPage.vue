@@ -61,7 +61,7 @@ export default {
 
                     if (response.status === 201) {
                         alert("User registered successfully!");
-                        this.resetForm();
+                        localStorage.setItem("loggedInUser", this.username); // Store username
                         this.$router.push("/TicketsOwned"); // Redirect to TicketsOwned page
                     }
                 } else {
@@ -73,6 +73,7 @@ export default {
 
                     if (response.status === 200) {
                         alert("Login successful!");
+                        localStorage.setItem("loggedInUser", this.username); // Store username
                         this.$router.push("/TicketsOwned"); // Redirect to TicketsOwned page
                     }
                 }
