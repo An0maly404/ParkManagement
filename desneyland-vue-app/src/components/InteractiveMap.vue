@@ -98,8 +98,10 @@ export default{
 .map-container {
   border-radius: 10px;
   position: relative;
-  width: 960px;
-  height: 960px;
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  max-height: 960px;
   margin: 2rem auto;
   overflow: hidden;
   background-color: rgb(239, 255, 254);
@@ -107,16 +109,16 @@ export default{
 
 .map {
   position: relative;
-  width: 960px;
-  height: 960px;
+  width: 100%;
+  height: 100%;
   transition: transform 0.3s ease;
   background: #f0f0f0;
   z-index: 1;
 }
 
 .map img {
-  width: 960px;
-  height: 960px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   pointer-events: none;
 }
