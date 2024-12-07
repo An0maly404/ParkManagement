@@ -89,7 +89,7 @@ export default {
             }, 6000);
         },
         downloadImage(){
-            const imageUrl=require('@/assets/NEMESIS1.jpg');
+            const imageUrl=require('@/assets/WINTER1.jpg');
             const link = document.createElement('a');
             link.href=imageUrl;
             link.download='map-image.jpg';
