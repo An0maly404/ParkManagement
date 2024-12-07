@@ -44,27 +44,59 @@ export default {
             mapSrc: planImage,
             attractionPoints: [
                 {
-                    x: 20,
-                    y: 30,
+                    x: 25,
+                    y: 28,
                     details: {
-                        name: "Attraction 2",
-                        description: "Description"
+                        name: "SON OF BEAST",
+                        description: "Son of Beast was a record-breaking wooden roller coaster, notable for being the first of its kind to include a vertical loop. Known for its intense speed and rough ride, it closed in 2012 due to safety concerns and high maintenance costs."
                     },
                 },
                 {
-                    x: 30,
-                    y: 20,
-                    details: {
-                        name: "Attraction 1",
-                        description: "Description"
-                    },
-                },
-                {
-                    x: 50,
+                    x: 10,
                     y: 10,
                     details: {
-                        name: "Attraction 3",
-                        description: "Description"
+                        name: "THE BIG DIPPER",
+                        description: "This iconic wooden roller coaster thrilled guests with its classic out-and-back design. Operating for over 80 years, it was a centerpiece of the park until Geauga Lake’s closure in 2007."
+                    },
+                },
+                {
+                    x: 64,
+                    y: 10,
+                    details: {
+                        name: "JOURNEY TO ATLANTIS",
+                        description: "A hybrid water ride and coaster, Journey to Atlantis offered a mix of thrilling drops and gentle splashes. It combined storytelling and aquatic elements, making it a fan favorite before its closure."
+                    },
+                },
+                {
+                    x: 86,
+                    y: 5,
+                    details: {
+                        name: "TIDAL WAVE",
+                        description: "This shoot-the-chute water ride gave riders a dramatic drop into a giant wave, soaking both passengers and onlookers. It closed in 2017 to make room for new developments."
+                    },
+                },
+                {
+                    x: 87,
+                    y: 30,
+                    details: {
+                        name: "DISASTER TRANSPORT",
+                        description: "Disaster Transport was an indoor roller coaster themed as a futuristic transport gone awry. Its mix of mild thrills and dark ride elements made it a unique experience before its demolition in 2012."
+                    },
+                },
+                {
+                    x: 76,
+                    y: 62,
+                    details: {
+                        name: "SKYRIDE",
+                        description: "A classic cable car attraction that offered scenic views of the park from above. It was a relaxing and nostalgic ride before its closure to accommodate newer attractions."
+                    },
+                },
+                {
+                    x: 27,
+                    y: 62,
+                    details: {
+                        name: "ASTROWHEEL",
+                        description: "A Ferris wheel providing gentle thrills and panoramic views, it was a staple of AstroWorld until the park shut down in 2005."
                     },
                 },
             ],
@@ -89,7 +121,7 @@ export default {
             }, 6000);
         },
         downloadImage(){
-            const imageUrl=require('@/assets/WINTER1.jpg');
+            const imageUrl=require('@/assets/MAP1.jpg');
             const link = document.createElement('a');
             link.href=imageUrl;
             link.download='map-image.jpg';
