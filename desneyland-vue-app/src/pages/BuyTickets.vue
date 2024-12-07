@@ -7,6 +7,24 @@
       <input type="date" id="date" :min="minDate" v-model="selectedDate" @change="updatePrices" />
     </div>
 
+    <!-- Choix du nombre de jours -->
+    <div class="days-container">
+      <label for="numberOfDays">Nombre de jours (1-4) :</label>
+      <select v-model="numberOfDays" id="numberOfDays" @change="updateTotal">
+        <option v-for="day in 4" :key="day" :value="day">{{ day }}</option>
+      </select>
+    </div>
+
+    <!-- Choix de l'hôtel -->
+    <div class="hotel-container" v-if="numberOfDays > 1">
+      <label for="hotelChoice">Choisissez un hôtel :</label>
+      <select v-model="hotelChoice" id="hotelChoice" @change="updateTotal">
+        <option v-for="hotel in hotels" :key="hotel.name" :value="hotel">
+          {{ hotel.name }} ({{ hotel.pricePerDay }}€ par jour supplémentaire)
+        </option>
+      </select>
+    </div>
+
     <!-- Conteneur principal -->
     <div class="container">
       <div
@@ -45,6 +63,11 @@
           {{ ticket.name }} - Adulte : {{ ticket.adultQuantity }} × {{ ticket.adultPrice }}€, Enfant : {{ ticket.childQuantity }} × {{ ticket.childPrice }}€
         </li>
       </ul>
+      <div v-if="hotelChoice">
+        <ul>
+          <li>Coût de l'hôtel ({{ hotelChoice.name }} - {{ hotelChoice.pricePerDay }}€ par jour) : {{ hotelTotalPrice }}€</li>
+        </ul>
+      </div>
       <p><strong>Total : {{ totalPrice }} €</strong></p>
     </div>
 
@@ -65,6 +88,13 @@ export default {
     return {
       minDate,
       selectedDate: minDate,
+      numberOfDays: 1,
+      hotelChoice: null,
+      hotels: [
+        { name: "Hôtel A", pricePerDay: 50 },
+        { name: "Hôtel B", pricePerDay: 75 },
+        { name: "Hôtel C", pricePerDay: 100 },
+      ],
       ticketTypes: [
         {
           name: "Basic",
@@ -97,7 +127,7 @@ export default {
     selectedTickets() {
       return this.ticketTypes.filter(ticket => ticket.adultQuantity > 0 || ticket.childQuantity > 0);
     },
-    totalPrice() {
+    ticketBasePrice() {
       return this.ticketTypes.reduce(
         (total, ticket) =>
           total +
@@ -106,16 +136,30 @@ export default {
         0
       );
     },
+    additionalDaysPrice() {
+      return 0;
+    },
+    hotelTotalPrice() {
+      if (!this.hotelChoice) return 0;
+      return Math.max(this.numberOfDays - 1, 0) * this.hotelChoice.pricePerDay;
+    },
+    totalPrice() {
+      return this.ticketBasePrice + this.additionalDaysPrice + this.hotelTotalPrice;
+    },
   },
   methods: {
     updatePrices() {
       const selectedDate = new Date(this.selectedDate);
       const isWeekend = selectedDate.getDay() === 0 || selectedDate.getDay() === 6;
 
-      this.ticketTypes = this.ticketTypes.map(ticket => ({
+      this.ticketTypes = this.ticketTypes.map(ticket => (isWeekend ? {
         ...ticket,
-        adultPrice: isWeekend ? ticket.adultPrice + 50 : ticket.adultPrice - 50,
-        childPrice: isWeekend ? ticket.childPrice + 25 : ticket.childPrice - 25,
+        adultPrice: ticket.adultPrice + 50,
+        childPrice: ticket.childPrice + 25,
+      } : {
+        ...ticket,
+        adultPrice: ticket.adultPrice - 50,
+        childPrice: ticket.childPrice - 25,
       }));
     },
     increaseQuantity(ticketType, category) {
@@ -126,12 +170,16 @@ export default {
       if (category === "adult" && ticketType.adultQuantity > 0) ticketType.adultQuantity--;
       if (category === "child" && ticketType.childQuantity > 0) ticketType.childQuantity--;
     },
+    updateTotal() {
+      // Trigger total price computation
+    },
     proceedToPayment() {
       alert(`Paiement de ${this.totalPrice} € en cours...`);
     },
   },
 };
 </script>
+
 
 <style scoped>
 /* Styles basés sur l'architecture fournie */
