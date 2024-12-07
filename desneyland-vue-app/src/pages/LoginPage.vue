@@ -3,43 +3,23 @@
         <h1>{{ isLogin ? "Login" : "Register" }}</h1>
     </header>
 
-    <form :action="isLogin ? '/login' : '/register'" method="POST">
+    <form @submit.prevent="handleSubmit">
         <fieldset>
             <label>Username </label>
-            <input type="text" id="username" name="username" placeholder="maverick" required />
+            <input v-model="username" type="text" id="username" placeholder="maverick" required />
             <br /><br />
 
-            <!-- Email field for Login -->
-            <label v-if="isLogin">Email </label>
-            <input
-                v-if="isLogin"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="abc@example.com"
-                required
-            />
-            <br v-if="isLogin" /><br v-if="isLogin" />
-
             <label>Password </label>
-            <input type="password" id="password" name="password" required />
+            <input v-model="password" type="password" id="password" required />
             <br /><br />
 
             <!-- Rewrite Password field for Register -->
             <label v-if="!isLogin">Rewrite Password </label>
-            <input
-                v-if="!isLogin"
-                type="password"
-                id="passverif"
-                name="passverif"
-                required
-            />
+            <input v-if="!isLogin" v-model="passwordVerification" type="password" id="passverif" required />
             <br v-if="!isLogin" /><br v-if="!isLogin" />
 
             <button type="reset">Reset</button>
-            <button type="submit">
-              <a href="/TicketsOwned">{{ isLogin ? "Login" : "Register" }}</a> 
-            </button>
+            <button type="submit">{{ isLogin ? "Login" : "Register" }}</button>
         </fieldset>
     </form>
     <br /><br />
@@ -53,17 +33,69 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     data() {
         return {
             isLogin: false, // Tracks whether it's in Login or Register mode
+            username: "",
+            password: "",
+            passwordVerification: "",
         };
+    },
+    methods: {
+        async handleSubmit() {
+            try {
+                if (!this.isLogin) {
+                    // Register mode
+                    if (this.password !== this.passwordVerification) {
+                        alert("Passwords do not match!");
+                        return;
+                    }
+
+                    const response = await axios.post("http://localhost:3000/users", {
+                        name: this.username,
+                        password: this.password,
+                    });
+
+                    if (response.status === 201) {
+                        alert("User registered successfully!");
+                        this.resetForm();
+                        this.$router.push("/TicketsOwned"); // Redirect to TicketsOwned page
+                    }
+                } else {
+                    // Login mode
+                    const response = await axios.post("http://localhost:3000/users/login", {
+                        name: this.username,
+                        password: this.password,
+                    });
+
+                    if (response.status === 200) {
+                        alert("Login successful!");
+                        this.$router.push("/TicketsOwned"); // Redirect to TicketsOwned page
+                    }
+                }
+            } catch (error) {
+                // Handle error response
+                if (error.response && error.response.status === 400) {
+                    alert("Error: " + (error.response.data || "Invalid username or password."));
+                } else {
+                    alert("An unexpected error occurred. Please try again.");
+                }
+                console.error(error);
+            }
+        },
+        resetForm() {
+            this.username = "";
+            this.password = "";
+            this.passwordVerification = "";
+        },
     },
 };
 </script>
 
 <style>
-/* Optional: Add some basic styling for visual clarity */
 form {
     margin: 0 auto;
     max-width: auto;
