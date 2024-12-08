@@ -18,7 +18,7 @@
             <button @click="zoomOut">-</button>
         </div>
 
-        <div v-if="selectedAttraction" class="attraction-details">
+        <div v-if="selectedAttraction" class="attraction-details" :style="{left:detailsPosition.x +'px',top:detailsPosition.y +'px'}" ref="details">
             <h2>{{ selectedAttraction.name }}</h2>
             <p>{{ selectedAttraction.description }}</p>
             <button @click="closeDetails">Fermer</button>
@@ -47,6 +47,7 @@ export default{
         startX: 0,
         startY: 0,
         selectedAttraction: null,
+        detailsPosition:{x:0,y:0},
         };
     },
     computed:{
@@ -83,6 +84,20 @@ export default{
         },
         showAttractionDetails(point){
             this.selectedAttraction=point.details;
+            this.$nextTick(()=>{
+                this.centerDetails();
+            });
+        },
+        centerDetails(){
+            const mapRect = this.$refs.map.getBoundingClientRect();
+            const detailsElement = this.$refs.details;
+            if (detailsElement){
+                const detailsWidth = detailsElement.offsetWidth;
+                const detailsHeight = detailsElement.offsetHeight;
+                const centerX = (mapRect.width - detailsWidth) / 2+this.offsetX;
+                const centerY = (mapRect.height - detailsHeight) / 2+this.offsetY;
+                this.detailsPosition = { x: centerX, y: centerY };
+            }
         },
         closeDetails(){
             this.selectedAttraction=null;
@@ -127,7 +142,7 @@ export default{
   position: absolute;
   width: 20px;
   height: 20px;
-  background: rgb(17, 0, 255);
+  background: rgb(251, 255, 0);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
@@ -163,15 +178,14 @@ export default{
 
 .attraction-details {
     font-family: "Lilita One", sans-serif;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 3;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    transition: transform 0.3s ease;
+    max-width: 400px;
 }
 
 .attraction-details button{
