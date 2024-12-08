@@ -124,13 +124,14 @@ export default{
 <style scoped>
 
 .routerview{
-  margin: 100px;
+  margin: 50px;
   margin-top: 200px; /*HELP TO SEE THE ROUTER NAV*/
   display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color:#eaf8fc ;
+  border-radius: 10px;
 }
 
 .navbar { /*DEFINE THE STYLE OF THE NAVBAR*/
