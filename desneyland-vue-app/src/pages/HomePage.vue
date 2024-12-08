@@ -26,7 +26,16 @@
     <p></p>
     <h1>Here is our map !</h1>
     <InteractiveMap :map-src="mapSrc" :points="attractionPoints" />
+    
     <button @click="downloadImage">Download Map</button>
+    <br>
+    <div class="attraction-wait-times">
+        <h2>Queue Times</h2>
+        <div v-for="(attraction, index) in attractions" :key="index" class="attraction">
+            <div class="attraction-name">{{ attraction.name }}</div>
+            <div class="wait-time">Waiting Time: {{ attraction.waitTime }} min</div>
+        </div>
+    </div>
     <br>
     <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
 </template>
@@ -41,6 +50,13 @@ export default {
     },
     data() {
         return {
+            attractions: [
+                { name: 'Son of beast', waitTime: 25 },
+                { name: 'Skyride', waitTime: 10 },
+                { name: 'Disaster Train', waitTime: 15 },
+                { name: 'The Big Dipper', waitTime: 30 },
+                { name: 'Tidal Wave', waitTime: 5 },
+            ],
             mapSrc: planImage,
             attractionPoints: [
                 {
@@ -228,5 +244,38 @@ button{
 
 button:hover{
     background-color: #d4b920;
+}
+
+/*WAIT TIMES*/
+
+.attraction-wait-times {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.attraction {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.attraction-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.wait-time {
+  color: #ff5733;
+  font-size: 1rem;
+}
+
+.attraction:last-child {
+  border-bottom: none;
 }
 </style>
