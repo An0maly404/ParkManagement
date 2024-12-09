@@ -1,130 +1,179 @@
 <template>
-    <div>
-      <h1>Information !</h1>
-      <div class="container">
-        <div class="box">
+  <div class="info-page">
+    <h1 class="page-title">Ticket Informations</h1>
+
+    <!-- Information Cards -->
+    <div class="cards-container">
+      <!-- Basic Package -->
+      <div class="card">
+        <div class="card-header">
           <h2>Basic</h2>
-          <ul>
-            <li>Acces to the park</li>
-            <li>Access to all the attractions</li>
-            <li>All day ticket</li>
-          </ul>
-          <div class="tarif">
-            <p>Adult : 50-100$</p>
-            <p>Children : 25-35$</p>
-          </div>
         </div>
-        <div class="box">
-          <h2>Special</h2>
-          <ul>
-            <li>Access to the park</li>
-            <li>Access to all the attractions and to a meal</li>
-            <li>All day ticket</li>
-          </ul>
-          <div class="tarif">
-            <p>Adult : 100-200$</p>
-            <p>Children : 50-100$</p>
-          </div>
-        </div>
-        <div class="box">
-          <h2>Premium</h2>
-          <ul>
-            <li>Access to the park</li>
-            <li>Unlimited Food</li>
-            <li>No queue tickets</li>
-          </ul>
-          <div class="tarif">
-            <p>Adult : 500-1000$</p>
-            <p>Children : 250-350$</p>
-          </div>
+        <ul class="card-features">
+          <li>Access to the park</li>
+          <li>Access to all attractions</li>
+          <li>All day ticket</li>
+        </ul>
+        <div class="card-pricing">
+          <p><span>Adult:</span> $50 - $100</p>
+          <p><span>Children:</span> $25 - $35</p>
         </div>
       </div>
-      <!-- Bouton Book Now -->
-      <div class="button-container">
-        <a href="/loginpage" class="book-now-button">Book Now</a>
+
+      <!-- Special Package -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Special</h2>
+        </div>
+        <ul class="card-features">
+          <li>Access to the park</li>
+          <li>Access to all attractions and a meal</li>
+          <li>All day ticket</li>
+        </ul>
+        <div class="card-pricing">
+          <p><span>Adult:</span> $100 - $200</p>
+          <p><span>Children:</span> $50 - $100</p>
+        </div>
+      </div>
+
+      <!-- Premium Package -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Premium</h2>
+        </div>
+        <ul class="card-features">
+          <li>Access to the park</li>
+          <li>Unlimited food</li>
+          <li>No-queue tickets</li>
+        </ul>
+        <div class="card-pricing">
+          <p><span>Adult:</span> $500 - $1000</p>
+          <p><span>Children:</span> $250 - $350</p>
+        </div>
       </div>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    name: "InformationBoxes",
-  };
-  </script>
-  
-  <style scoped>
 
-  h1,h2,p,li{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  /* Conteneur principal */
-  .container {
-    display: flex;
-    justify-content: space-between; /* Espace égal entre les blocs */
-    align-items: flex-start; /* Alignement vertical en haut */
-    gap: 20px; /* Espacement uniforme entre les blocs */
-    width: 100%; /* Utiliser toute la largeur disponible */
-  }
-  
-  /* Style des blocs individuels */
-  .box {
-    background-color: #d3d3d3; /* Gris clair */
-    border-radius: 10px; /* Bords arrondis */
-    width: 300px; /* Largeur fixe */
-    padding: 20px; /* Espacement interne */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    display: flex;
-    flex-direction: column; /* Alignement vertical du contenu */
-    justify-content: flex-start; /* Alignement des éléments au début */
-    align-items: flex-start; /* Alignement des éléments à gauche */
-    text-align: left; /* Alignement du texte à gauche */
-    box-sizing: border-box; /* Inclure le padding dans la largeur/hauteur */
-  }
-  
-  /* Style pour les listes */
-  ul {
-    margin: 10px 0 0; /* Espacement au-dessus de la liste */
-    padding-left: 20px; /* Indentation des puces */
-    list-style-type: disc; /* Type de puce */
-  }
-  
-  li {
-    margin-bottom: 5px; /* Espacement entre les éléments de la liste */
-  }
-  
-  /* Style pour la section tarif */
-  .tarif {
-    background-color: #a9a9a9; /* Gris plus foncé */
-    border-radius: 10px; /* Bords arrondis */
-    padding: 10px; /* Espacement interne */
-    margin-top: 20px; /* Espacement au-dessus */
-    width: 100%; /* Occuper toute la largeur disponible */
-    box-sizing: border-box; /* Assurer que le padding est inclus dans la largeur */
-  }
-  
-  /* Conteneur du bouton */
-  .button-container {
-    margin-top: 30px; /* Espacement au-dessus du bouton */
-    text-align: center; /* Centrer le bouton horizontalement */
-  }
-  
-  /* Style du bouton */
-  .book-now-button {
-    display: inline-block;
-    background-color: #2646d7; /* Bleu */
-    color: white; /* Texte blanc */
-    padding: 15px 30px; /* Espacement interne */
-    text-decoration: none; /* Supprimer le soulignement */
-    font-size: 1.5em; /* Taille de la police équivalente à H2 */
-    border-radius: 10px; /* Bords arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation d'interaction */
-  }
-  
-  /* Effet de survol */
-  .book-now-button:hover {
-    background-color: #b3a700; /* Bleu plus foncé */
-    transform: scale(1.05); /* Légère augmentation de la taille */
-  }
-  </style>
-  
+    <!-- Book Now Button -->
+    <div class="button-container">
+      <a href="/loginpage" class="book-now-button">Book Now</a>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "InformationBoxes",
+};
+</script>
+
+<style scoped>
+/* General Styles */
+
+h2 {
+  color: #545ddd;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2b2d42;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Card Styles */
+.card {
+  background-color: #ececec;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header {
+  padding: 15px 0;
+  color: #9b8e8e;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-features {
+  padding: 20px 0;
+  list-style: none;
+  margin: 0;
+  color: #555;
+}
+
+.card-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.card-features li:last-child {
+  border-bottom: none;
+}
+
+.card-pricing {
+  background-color: #f8f9fa;
+  padding: 15px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.card-pricing p {
+  margin: 5px 0;
+}
+
+.card-pricing span {
+  font-weight: 600;
+  color: #2b2d42;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Container */
+.button-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.book-now-button {
+  display: inline-block;
+  background-color: #545ddd;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-now-button:hover {
+  background-color: #1e38a1;
+  transform: translateY(-3px);
+}
+</style>
