@@ -1,5 +1,6 @@
 <template>
-    <h1>Welcome to DEFUNCTLAND, where your dream attractions are created !</h1>
+    <h1>Welcome to DEFUNCTLAND !</h1>
+    <h2>"Where yesterday meets tomorrow, and dreams never end"</h2>
     <div class="carousel">
         <div class="carousel-images" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
             <img v-for="(image, index) in images" :key="index" :src="image.src" :alt="image.alt"
@@ -25,19 +26,21 @@
     <p>Sunday: 9-20</p>
     <p></p>
     <h1>Here is our map !</h1>
-    <InteractiveMap :map-src="mapSrc" :points="attractionPoints" />
-    
-    <button @click="downloadImage">Download Map</button>
-    <br>
-    <div class="attraction-wait-times">
-        <h2>Queue Times</h2>
-        <div v-for="(attraction, index) in attractions" :key="index" class="attraction">
-            <div class="attraction-name">{{ attraction.name }}</div>
-            <div class="wait-time">Waiting Time: {{ attraction.waitTime }} min</div>
+    <div class="map-and-queue">
+        <div class="map">
+            <InteractiveMap :map-src="mapSrc" :points="attractionPoints" />
+            <button @click="downloadImage">Download Map</button>
+        </div>
+        <div class="attraction-wait-times">
+            <h2>Queue Times</h2>
+            <div v-for="(attraction, index) in attractions" :key="index" class="attraction">
+                <div class="attraction-name">{{ attraction.name }}</div>
+                <div class="wait-time">Waiting Time: {{ attraction.waitTime }} min</div>
+            </div>
         </div>
     </div>
     <br>
-    <p>Join Us at Defunctland</p>
+    <h1>Join Us at Defunctland</h1>
     <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
 </template>
 
@@ -307,15 +310,6 @@ button:hover{
 
 /*WAIT TIMES*/
 
-.attraction-wait-times {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: transparent;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
 
 .attraction {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -338,4 +332,30 @@ button:hover{
 .attraction:last-child {
   border-bottom: none;
 }
+
+.map-and-queue{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+}
+.map{
+    flex: 2;
+    max-width: 70%;
+}
+
+.attraction-wait-times {
+  margin-top: 37px;
+  flex: 1;
+  max-width: 30%;
+  padding: 0.8rem;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
 </style>

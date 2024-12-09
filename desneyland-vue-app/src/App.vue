@@ -6,11 +6,11 @@
       </router-link>
     </div>
     <div class="navbar-links" v-if="!isMobileMenu">
-      <router-link to="/aboutpage">About</router-link>
       <router-link to="/attractionslist">Attractions</router-link>
       <router-link to="/hotelslist">Hotels</router-link>
       <router-link to="/restaurantslist">Restaurants</router-link>
       <router-link to="/ticketinfos">Tickets</router-link>
+      <router-link to="/aboutpage">About</router-link>
     </div>
     <div class="navbar-right" v-if="!isMobileMenu">
       <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
