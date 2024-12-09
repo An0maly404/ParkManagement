@@ -1,233 +1,193 @@
 <template>
-  <h1 class="attractionstype">RESTAURANTS BY CUISINE TYPE</h1>
-  <div class="categories-container">
-    <div v-for="(group, cuisine) in groupedRestaurants" :key="cuisine" class="cuisine-group">
-      <h2 class="cuisine-header">{{ cuisine }}</h2>
+  <div class="restaurants-container">
+    <header>
+      <h1>Restaurants</h1>
+      <h2 class="story-title">Explore Defunctland's Unique Culinary Experiences</h2>
+    </header>
+
+    <section>
+      <p class="intro-text">
+        Dive into a variety of culinary delights inspired by abandoned stories, where each dish serves nostalgia with a dash of mystery.
+      </p>
+    </section>
+
+    <section class="restaurant-cards-section">
       <div class="restaurant-cards">
         <div
-          v-for="restaurant in group"
+          v-for="restaurant in restaurants"
           :key="restaurant.name"
-          class="restaurant-wrapper"
+          class="restaurant-card"
+          @click="selectRestaurant(restaurant)"
         >
-          <!-- Restaurant Card -->
-          <div class="restaurant-card" @click="selectRestaurant(restaurant)">
-            <img
-              :src="restaurant.image"
-              :alt="restaurant.name"
-              class="restaurant-image"
-            />
-            <h3 class="restaurant-name">{{ restaurant.name }}</h3>
-          </div>
-
-          <!-- Restaurant Details -->
-          <div
-            v-if="selectedRestaurant && selectedRestaurant.name === restaurant.name"
-            class="restaurant-details"
-            :ref="'detailSection_' + restaurant.name"
-          >
-            <h2 class="details-header">{{ selectedRestaurant.name }}</h2>
-            <p class="details-description">{{ selectedRestaurant.description }}</p>
-            <div class="additional-images">
-              <img
-                v-for="(image, idx) in selectedRestaurant.additionalImages"
-                :key="idx"
-                :src="image"
-                :alt="`${selectedRestaurant.name} additional image ${idx + 1}`"
-              />
-            </div>
-          </div>
+          <img :src="restaurant.image" :alt="restaurant.name" />
+          <h3>{{ restaurant.name }}</h3>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section v-if="selectedRestaurant" class="restaurant-details">
+      <h3>{{ selectedRestaurant.name }}</h3>
+      <p>{{ selectedRestaurant.description }}</p>
+      <div class="additional-images">
+        <h4>Additional Images</h4>
+        <div class="images-container">
+          <img
+            v-for="(img, index) in selectedRestaurant.additionalImages"
+            :key="index"
+            :src="img"
+            :alt="`Image ${index + 1} of ${selectedRestaurant.name}`"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import PizzaFactoryMain from '@/assets/PIZZAFACTORY1.jpg';
-import PizzaFactory2 from '@/assets/PIZZA-FACTORY2.jpeg';
-import BangalaMain from '@/assets/Bangala-Resto.jpeg';
-import BangalaAdditional from '@/assets/BANGALA1.jpeg';
-
 export default {
-  name: 'RestaurantsList',
+  name: "RestaurantsList",
   data() {
     return {
       selectedRestaurant: null,
       restaurants: [
         {
-          name: 'Pizza Factory',
-          image: PizzaFactoryMain,
-          description: 'La Pizza Factory Mashallah pizza.',
-          additionalImages: [PizzaFactory2],
-          cuisineType: 'Italian'
+          name: "Pizza Factory",
+          image: require("@/assets/PIZZAFACTORY1.jpg"),
+          description: "La Pizza Factory Mashallah pizza.",
+          additionalImages: [require("@/assets/PIZZA-FACTORY2.jpeg")],
         },
         {
-          name: 'Le Bangala',
-          image: BangalaMain,
-          description: 'Le Bangala is proposing you BIIIG crepes.',
-          additionalImages: [BangalaAdditional],
-          cuisineType: 'Indian'
-        }
-      ]
+          name: "Le Bangala",
+          image: require("@/assets/Bangala-Resto.jpeg"),
+          description: "Le Bangala is proposing you BIIIG crepes.",
+          additionalImages: [require("@/assets/BANGALA1.jpeg")],
+        },
+      ],
     };
-  },
-  computed: {
-    groupedRestaurants() {
-      return this.restaurants.reduce((groups, restaurant) => {
-        const type = restaurant.cuisineType;
-        if (!groups[type]) {
-          groups[type] = [];
-        }
-        groups[type].push(restaurant);
-        return groups;
-      }, {});
-    }
   },
   methods: {
     selectRestaurant(restaurant) {
-      if (this.selectedRestaurant && this.selectedRestaurant.name === restaurant.name) {
-        this.selectedRestaurant = null;
-      } else {
-        this.selectedRestaurant = restaurant;
-        this.$nextTick(() => {
-          const refName = 'detailSection_' + restaurant.name;
-          const detailEl = this.$refs[refName];
-          if (detailEl instanceof Element) {
-            detailEl.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      }
-    }
-  }
+      this.selectedRestaurant = restaurant;
+    },
+  },
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:wght@300;400;700&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
+/* General Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
   color: #333;
+  line-height: 1.7;
 }
 
-.attractionstype {
+/* Container */
+.restaurants-container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Header Section */
+header {
   text-align: center;
-  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-family: 'Lilita One', cursive;
   color: #2c3e50;
-  margin: 40px 0 20px;
-  font-weight: 600;
-  position: relative;
+  font-size: 2.5em;
 }
 
-.attractionstype::after {
-  content: '';
-  width: 60px;
-  height: 4px;
-  background-color: #ff7e67;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+.story-title {
+  font-size: 2em;
+  color: #34495e;
+  margin-top: 10px;
 }
 
-.categories-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  margin: 0 auto;
-}
-
-.cuisine-group {
-  width: 100%;
-  max-width: 1200px;
-}
-
-.cuisine-header {
-  font-size: 1.8rem;
-  color: #555;
-  text-transform: uppercase;
-  border-bottom: 2px solid #ff7e67;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+.intro-text {
+  font-size: 1.2em;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Restaurant Cards */
+.restaurant-cards-section {
+  margin: 30px 0;
 }
 
 .restaurant-cards {
   display: flex;
-  justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-}
-
-.restaurant-wrapper {
-  width: 300px;
+  gap: 20px;
+  justify-content: center;
 }
 
 .restaurant-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f8f8;
 }
 
 .restaurant-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.restaurant-image {
+.restaurant-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-}
-
-.restaurant-name {
-  text-align: center;
-  font-size: 1.4rem;
-  padding: 15px;
-  color: #333;
-  font-weight: 600;
-}
-
-.restaurant-details {
-  background-color: #fefefe;
-  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 20px;
-  margin-top: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
-
-.details-header {
-  font-size: 1.6rem;
-  color: #ff7e67;
   margin-bottom: 10px;
 }
 
-.details-description {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.5;
+/* Restaurant Details */
+.restaurant-details {
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
 }
 
 .additional-images {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 15px;
-  gap: 10px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.additional-images img {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
+.images-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.images-container img {
+  width: 200px;
+  height: auto;
   border-radius: 5px;
-  border: 2px solid #ff7e67;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+.images-container img:hover {
+  transform: scale(1.1);
 }
 </style>

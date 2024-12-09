@@ -129,7 +129,7 @@ export default{
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color:#F9F7F7 ;
+  background-color:#dbe2ef27 ;
   border-radius: 10px;
 }
 

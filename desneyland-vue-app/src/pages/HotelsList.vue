@@ -1,35 +1,59 @@
 <template>
-    <h1>HOTELS</h1>
-    <p>Step into the hauntingly beautiful world of abandoned hotels, silent witnesses to bygone eras and untold mysteries. Each hotel in Defectland holds a unique story, blending faded luxury with unsettling events, offering an immersive experience of history and chills.
-    Behind their crumbling facades, overgrown with nature, these forgotten places whisper tales of their golden days, their sudden decline, and the legends that surround them. Whether you’re a history enthusiast, a curious explorer, or a thrill-seeker, Defectland’s hotels are sure to captivate your imagination. </p>
-    <br>
-    <p>Click on a hotel to uncover its secrets and dive into its fascinating story. Will you dare to explore these places haunted by the past?</p>
     <div class="hotels-container">
+      <header>
+        <h1>Hotels</h1>
+        <h2 class="story-title">Discover Defunctland's Hauntingly Beautiful Hotels</h2>
+      </header>
+  
+      <section>
+        <p class="intro-text">
+          Step into the hauntingly beautiful world of abandoned hotels, where faded luxury meets eerie stories. Each hotel tells a tale that blends nostalgia with mystery.
+        </p>
+      </section>
+  
+      <section class="hotel-cards-section">
         <div class="hotel-cards">
-            <div v-for="hotel in hotels" :key="hotel.id" class="hotel-card" @click="selectHotel(hotel)">
-                <img :src="hotel.image" alt="hotel.name">
-                <h3>{{ hotel.name }}</h3>
-            </div>
+          <div
+            v-for="hotel in hotels"
+            :key="hotel.id"
+            class="hotel-card"
+            @click="selectHotel(hotel)"
+          >
+            <img :src="hotel.image" :alt="hotel.name" />
+            <h3>{{ hotel.name }}</h3>
+          </div>
         </div>
-
-        <div v-if="selectedHotel" class="hotel-details">
-            <h2>{{ selectedHotel.name }}</h2>
-            <p>{{ selectedHotel.description }}</p>
-            <br>
-            <p class="price"><strong>Price:</strong>${{ selectedHotel.price }}</p>
-            <div class="additionnal-images">
-                <h4>Additionnal Images</h4>
-                <div class="images-container">
-                    <img v-for="(img,index) in selectedHotel.additionnalimages" :key="index" :src="img" :alt="`Image ${index + 1} of ${selectedHotel.name}`">
-                </div>
-            </div>
+      </section>
+  
+      <section v-if="selectedHotel" class="hotel-details">
+        <h3>{{ selectedHotel.name }}</h3>
+        <p>{{ selectedHotel.description }}</p>
+        <p class="price"><strong>Price:</strong> ${{ selectedHotel.price }}</p>
+  
+        <div class="additional-images">
+          <h4>Additional Images</h4>
+          <div class="images-container">
+            <img
+              v-for="(img, index) in selectedHotel.additionnalimages"
+              :key="index"
+              :src="img"
+              :alt="`Image ${index + 1} of ${selectedHotel.name}`"
+            />
+          </div>
         </div>
+      </section>
+  
+      <section class="other-hotels">
+        <p>
+          Not interested in our hotels? Check out other options here:
+        </p>
+        <a href="https://www.airbnb.co.uk/">Airbnb</a>
+      </section>
+  
+      <router-link class="book-now" to="/loginpage">BOOK NOW</router-link>
     </div>
-    <p>If you're not attracted by our hotels, you can have a look to other hotel nearby</p>
-    <a href="https://www.airbnb.co.uk/">You can search here</a>
-    <h2>See you soon on Defunctland !</h2>
-    <router-link class="book-now" to="/loginpage">BOOK NOW</router-link>
-</template>  
+</template>
+   
 
 <script>
 export default{
@@ -65,113 +89,170 @@ export default{
 </script>
 
 <style scoped>
-body{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:wght@300;400;700&display=swap');
+
+/* General Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.7;
 }
-h1,h2,p,h4{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+
+/* Container */
 .hotels-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1300px;
+  margin: 40px auto;
   padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Header Section */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-family: 'Lilita One', cursive;
+  color: #2c3e50;
+  font-size: 2.5em;
+}
+
+.story-title {
+  font-size: 2em;
+  color: #34495e;
+  margin-top: 10px;
+}
+
+.intro-text {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Hotel Cards */
+.hotel-cards-section {
+  margin: 30px 0;
 }
 
 .hotel-cards {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 100%;
-  width: 100%;
 }
 
 .hotel-card {
-    cursor: pointer;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    width: 600px;
-    transition: transform 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f8f8;
 }
 
-.hotel-card:hover{
-    transform: scale(1.05);
+.hotel-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hotel-card img {
-  width: 600px;
-  height: 450px;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
+/* Hotel Details */
 .hotel-details {
   margin-top: 20px;
   text-align: center;
   border-top: 1px solid #ddd;
   padding-top: 20px;
+}
+
+.additional-images {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.images-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-p{
-    width: auto;
-    width: 700px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.price{
-    font-size: larger;
-}
-
-.additionnal-images{
-    margin-top: 20px;
-    text-align: center;
-}
-
-.additionnal-images h4{
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.images-container{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
 .images-container img {
-    width: 500px;
-    height: auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    transition: transform 0.3s ease;
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease;
 }
-
 
 .images-container img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
-.book-now{
-    background-color: #2646d7;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
+/* Other Hotels */
+.other-hotels {
+  margin-top: 20px;
+  text-align: center;
 }
 
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Book Now Button */
+.book-now {
+  display: block;
+  margin: 30px auto 0;
+  background-color: #2646d7;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  max-width: 300px;
+}
 
 .book-now:hover {
-    background-color: #d4b920;
+  background-color: #d4b920;
 }
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 </style>
