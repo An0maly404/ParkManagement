@@ -5,37 +5,37 @@
         <div class="box">
           <h2>Basic</h2>
           <ul>
-            <li>Accès au parc</li>
-            <li>Acces à toutes les attractions une fois</li>
-            <li>Billet pour toute la journée</li>
+            <li>Acces to the park</li>
+            <li>Access to all the attractions</li>
+            <li>All day ticket</li>
           </ul>
           <div class="tarif">
-            <p>Adulte : 50-100$</p>
-            <p>Enfant : 25-35$</p>
+            <p>Adult : 50-100$</p>
+            <p>Children : 25-35$</p>
           </div>
         </div>
         <div class="box">
           <h2>Special</h2>
           <ul>
-            <li>Accès au parc</li>
-            <li>Accès à toutes les attractions autant de fois que possible</li>
-            <li>Billet pour toute la journée</li>
+            <li>Access to the park</li>
+            <li>Access to all the attractions and to a meal</li>
+            <li>All day ticket</li>
           </ul>
           <div class="tarif">
-            <p>Adulte : 100-200$</p>
-            <p>Enfant : 50-100$</p>
+            <p>Adult : 100-200$</p>
+            <p>Children : 50-100$</p>
           </div>
         </div>
         <div class="box">
           <h2>Premium</h2>
           <ul>
-            <li>Accès au parc</li>
-            <li>Repas inclus</li>
-            <li>Billets coupe file</li>
+            <li>Access to the park</li>
+            <li>Unlimited Food</li>
+            <li>No queue tickets</li>
           </ul>
           <div class="tarif">
-            <p>Adulte : 500-1000$</p>
-            <p>Enfant : 250-350$</p>
+            <p>Adult : 500-1000$</p>
+            <p>Children : 250-350$</p>
           </div>
         </div>
       </div>

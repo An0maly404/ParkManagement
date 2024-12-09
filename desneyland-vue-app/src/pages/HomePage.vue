@@ -311,7 +311,7 @@ button:hover{
   max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
-  background-color: #f9f9f9;
+  background-color: transparent;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
