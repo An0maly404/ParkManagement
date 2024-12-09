@@ -14,6 +14,11 @@
         </h1>
     </div>
     <br>
+    <h3>DEFUNCTLAND is much more than just an amusement park.
+        Discover a world of adventure, magic, and fun for the whole family.
+        With thrilling attractions, captivating shows, and immersive experiences,
+        your day will be unforgettable !</h3>
+    <br>
     <div class="carousel">
         <div class="carousel-images" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
             <img v-for="(image, index) in images" :key="index" :src="image.src" :alt="image.alt"
@@ -24,20 +29,9 @@
             <button @click="nextImage">&gt;</button>
         </div>
     </div>
-    <h3>DEFUNCTLAND is much more than just an amusement park.
-        Discover a world of adventure, magic, and fun for the whole family.
-        With thrilling attractions, captivating shows, and immersive experiences,
-        your day will be unforgettable !</h3>
+    <br>    
     <router-link class="book-now" to="/aboutpage">DISCOVER MORE !</router-link>
-    <h2> Opening Hours</h2>
-    <p>Monday: 9-18</p>
-    <p>Tuesday: Closed</p>
-    <p>Wednesday: 9-18</p>
-    <p>Thursday: 9-18</p>
-    <p>Friday: 9-20</p>
-    <p>Saturday: 9-20</p>
-    <p>Sunday: 9-20</p>
-    <p></p>
+
     <h1>Here is our map !</h1>
     <div class="map-and-queue">
         <div class="map">
@@ -49,6 +43,11 @@
             <div v-for="(attraction, index) in attractions" :key="index" class="attraction">
                 <div class="attraction-name">{{ attraction.name }}</div>
                 <div class="wait-time">Waiting Time: {{ attraction.waitTime }} min</div>
+            </div>
+            <h2>Opening Hours</h2>
+            <div v-for="(entry, index) in openinghours" :key="index" class="attraction2">
+                <div class="attraction-name">{{ entry.day }}</div>
+                <div class="opening-hours">  {{ entry.hours }} </div>
             </div>
         </div>
     </div>
@@ -67,6 +66,15 @@ export default {
     },
     data() {
         return {
+            openinghours:[
+                {day:'Monday',hours:'10h-20h'},
+                {day:'Tuesday',hours:'10h-20h'},
+                {day:'Wednesday',hours:'10h-20h'},
+                {day:'Thursday',hours:'10h-20h'},
+                {day:'Friday',hours:'10h-20h'},
+                {day:'Saturday',hours:'10h-20h'},
+                {day:'Sunday',hours:'10h-20h'},
+            ],
             attractions: [
                 { name: 'Son of beast', waitTime: 25 },
                 { name: 'The Big Dipper', waitTime: 30 },
@@ -405,6 +413,7 @@ button:hover{
   border-bottom: 1px solid #ddd;
 }
 
+
 .attraction-name {
   font-weight: bold;
   color: #333;
@@ -412,6 +421,11 @@ button:hover{
 
 .wait-time {
   color: #ff5733;
+  font-size: 1rem;
+}
+
+.opening-hours{
+  color: #112D4E;
   font-size: 1rem;
 }
 
