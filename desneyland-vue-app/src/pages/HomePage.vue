@@ -1,6 +1,19 @@
 <template>
-    <h1>Welcome to DEFUNCTLAND !</h1>
-    <h2>"Where yesterday meets tomorrow, and dreams never end"</h2>
+    <div class="welcome-image">
+        <h1>
+            <span class="fade-word">"</span>
+            <span class="fade-word">Where </span>
+            <span class="fade-word">yesterday </span>
+            <span class="fade-word">meets </span>
+            <span class="fade-word">tomorrow, </span>
+            <span class="fade-word">and </span>
+            <span class="fade-word">dreams </span>
+            <span class="fade-word">never </span>
+            <span class="fade-word">end</span>
+            <span class="fade-word">"</span>
+        </h1>
+    </div>
+    <br>
     <div class="carousel">
         <div class="carousel-images" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
             <img v-for="(image, index) in images" :key="index" :src="image.src" :alt="image.alt"
@@ -217,6 +230,79 @@ export default {
 </script>
 
 <style scoped>
+.welcome-image{
+    padding-top: 0;
+    background-image:url('~@/assets/ACCEUIL.jpg') ;
+    background-size: cover;
+    background-position: top center;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    top:0;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lilita+One&display=swap');
+
+.welcome-image h1{
+    color: rgba(255, 255, 255, 0.767);
+    font-family: "Imperial Script", cursive;
+    font-size: 500%;
+}
+
+.fade-word{
+    opacity: 0;
+    display: inline-block;
+    animation: fadeIn 1s forwards;
+    margin-right: 10px;
+}
+.fade-word:nth-child(1) {
+    animation-delay: 0s;
+}
+.fade-word:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.fade-word:nth-child(3) {
+    animation-delay: 1s;
+}
+.fade-word:nth-child(4) {
+    animation-delay: 1.5s;
+}
+.fade-word:nth-child(5) {
+    animation-delay: 2s;
+}
+.fade-word:nth-child(6) {
+    animation-delay: 2.5s;
+}
+.fade-word:nth-child(7) {
+    animation-delay: 3s;
+}
+.fade-word:nth-child(8) {
+    animation-delay: 3.5s;
+}
+.fade-word:nth-child(9) {
+    animation-delay: 4s;
+}
+.fade-word:nth-child(10) {
+    animation-delay: 4.5s;
+}
+.fade-word:nth-child(11) {
+    animation-delay: 5s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
 /* _________________________________________________________________AJUSTMENTS FOR THE CAROUSEL _____________________________________________________________________________*/
 .carousel {
     position: relative;

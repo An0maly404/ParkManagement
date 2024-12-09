@@ -26,7 +26,6 @@
       <router-link to="/ticketinfos">Tickets</router-link>
     </div>
   </nav>
-  
   <div class="routerview">
     <router-view></router-view>
   </div>
@@ -38,7 +37,7 @@
         <p>Phone: +1 (800) 555-1234</p>
         <p>Email: <a href="mailto:contact@defunctland.com">contact@defunctland.com</a></p>
       </div>
-      <div class="foot-section">
+      <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
           <li><router-link to="/">Home</router-link></li>
@@ -315,7 +314,7 @@ div {
 .footer-section h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #545ddd;
+  color: #3F72AF;
 }
 
 .footer-section ul {
@@ -333,7 +332,7 @@ div {
 }
 
 .footer-section a:hover {
-  color: #545ddd;
+  color: #3F72AF;
 }
 
 .social-links a {
@@ -356,7 +355,7 @@ footer input {
 footer button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #2646d7;
+  background-color: #112D4E;
   color: #ecf0f1;
   border-radius: 4px;
   cursor: pointer;
