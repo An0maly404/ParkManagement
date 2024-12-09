@@ -65,7 +65,7 @@ export default{
                     name:"JADRAN HOTEL",
                     image:require('@/assets/HOTEL1.jpg'),
                     additionnalimages:[require('@/assets/HOTEL11.jpg'),require('@/assets/HOTEL12.jpg')],
-                    description:"The Hotel Jadran, perched on a cliff overlooking the Adriatic Sea, was a beacon of modernist luxury when it opened in the 1930s. Designed with sleek lines and expansive terraces, it catered to elite guests seeking seaside elegance. Its decline began during the Yugoslav wars of the 1990s, when it was abandoned and left to the elements. Today, its stark, decaying facade contrasts with the sparkling sea, with graffiti-covered walls and collapsing interiors telling a story of lost grandeur. Now a silent relic, it serves as a poignant reminder of history and a compelling attraction in Defectland’s eerie lineup.",
+                    description:"The Hotel Jadran, perched on a cliff overlooking the Adriatic Sea, was a beacon of modernist luxury when it opened in the 1930s. Designed with sleek lines and expansive terraces, it catered to elite guests seeking seaside elegance. Its decline began during the Yugoslav wars of the 1990s, when it was abandoned and left to the elements. Today, its stark, decaying facade contrasts with the sparkling sea, with graffiti-covered walls and collapsing interiors telling a story of lost grandeur. Now a silent relic, it serves as a poignant reminder of history and a compelling attraction in Defunctland’s eerie lineup.",
                     price:150,
                 },
                 {
@@ -73,7 +73,7 @@ export default{
                     name:"WEIDMANN HOTEL",
                     image:require('@/assets/HOTEL2.jpg'),
                     additionnalimages:[require('@/assets/HOTEL21.jpg'),require('@/assets/HOTEL22.jpg')],
-                    description:"The Hotel Weidmann, built in the 1920s, was once a luxurious retreat for wealthy travelers, nestled in a secluded alpine forest. Known for its grand ballroom and panoramic views, it thrived for decades until a mysterious fire in the 1970s forced its closure. Rumors of tragic accidents and unexplained disappearances added to its eerie reputation, deterring redevelopment efforts. Today, the crumbling structure is overrun by nature, with ivy-clad walls and shattered windows, attracting urban explorers and ghost hunters. Its haunting ambiance and storied past make it a chilling centerpiece in Defectland's collection of forgotten attractions.",
+                    description:"The Hotel Weidmann, built in the 1920s, was once a luxurious retreat for wealthy travelers, nestled in a secluded alpine forest. Known for its grand ballroom and panoramic views, it thrived for decades until a mysterious fire in the 1970s forced its closure. Rumors of tragic accidents and unexplained disappearances added to its eerie reputation, deterring redevelopment efforts. Today, the crumbling structure is overrun by nature, with ivy-clad walls and shattered windows, attracting urban explorers and ghost hunters. Its haunting ambiance and storied past make it a chilling centerpiece in Defunctland's collection of forgotten attractions.",
                     price:150,
                 },
             ],
