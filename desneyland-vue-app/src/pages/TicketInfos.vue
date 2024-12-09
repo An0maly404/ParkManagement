@@ -10,7 +10,7 @@
           <h2>Basic</h2>
         </div>
         <ul class="card-features">
-          <li>Access to the park</li>
+          <li>Access to the Defunctland</li>
           <li>Access to all attractions</li>
           <li>All day ticket</li>
         </ul>
@@ -26,7 +26,7 @@
           <h2>Special</h2>
         </div>
         <ul class="card-features">
-          <li>Access to the park</li>
+          <li>Access to the Defunctland</li>
           <li>Access to all attractions and a meal</li>
           <li>All day ticket</li>
         </ul>
@@ -42,7 +42,7 @@
           <h2>Premium</h2>
         </div>
         <ul class="card-features">
-          <li>Access to the park</li>
+          <li>Access to Defunctland</li>
           <li>Unlimited food</li>
           <li>No-queue tickets</li>
         </ul>
