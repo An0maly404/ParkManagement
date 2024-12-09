@@ -38,7 +38,7 @@
         <p>Phone: +1 (800) 555-1234</p>
         <p>Email: <a href="mailto:contact@defunctland.com">contact@defunctland.com</a></p>
       </div>
-      <div class="foot-section">
+      <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
           <li><router-link to="/">Home</router-link></li>
@@ -328,12 +328,12 @@ div {
 }
 
 .footer-section a {
-  color: #b2c9f5;
+  color: #545ddd;
   text-decoration: none;
 }
 
 .footer-section a:hover {
-  color: #545ddd;
+  color: #b2c9f5 ;
 }
 
 .social-links a {
