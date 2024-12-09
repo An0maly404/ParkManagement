@@ -277,7 +277,7 @@ a { /*GENERAL STYLE FOR THE NAV LINKS */
   
 .navbar-links a:hover, /*STYLE WHEN YOU HOVER THE LINKS AND WHEN YOU'RE ON A ROUTER PAGE */
 .navbar-links a.router-link-active {
-    background-color: rgba(192, 192, 192, 0.24);
+    background-color: rgba(122, 122, 122, 0.226);
   }
 
 div {
@@ -327,12 +327,12 @@ div {
 }
 
 .footer-section a {
-  color: #b2c9f5;
+  color: #3F72AF;
   text-decoration: none;
 }
 
 .footer-section a:hover {
-  color: #3F72AF;
+  color: #b2c9f5;
 }
 
 .social-links a {
