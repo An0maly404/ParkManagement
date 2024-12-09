@@ -71,9 +71,9 @@ let tickets = []; // In-memory storage for tickets
 
 // Save a new ticket
 app.post('/tickets', (req, res) => {
-  const { username, numberOfDays, hotelChoice, ticketDetails, totalPrice } = req.body;
+  const { username, numberOfDays, hotelChoice, ticketDetails, totalPrice, usableDate } = req.body;
 
-  if (!username || !numberOfDays || !hotelChoice || !ticketDetails || !totalPrice) {
+  if (!username || !numberOfDays || !hotelChoice || !ticketDetails || !totalPrice || !usableDate) {
     return res.status(400).send("Invalid ticket data");
   }
 
@@ -83,12 +83,13 @@ app.post('/tickets', (req, res) => {
     hotelChoice,
     ticketDetails,
     totalPrice,
-    createdAt: new Date(),
+    usableDate: new Date(usableDate), // Save the usable date
   };
 
   tickets.push(newTicket);
   res.status(201).send("Ticket saved successfully");
 });
+
 
 // Get tickets for a specific user
 app.get('/tickets/:username', (req, res) => {

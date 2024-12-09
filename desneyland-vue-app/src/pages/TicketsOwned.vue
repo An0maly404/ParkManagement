@@ -21,7 +21,7 @@
             <li v-for="(detail, i) in ticket.ticketDetails" :key="i">
               <span class="detail-name">{{ detail.name }}</span>
               <span class="detail-quantity">
-                Adults: {{ detail.adultQuantity }} × {{ detail.adultPrice }}€, 
+                Adults: {{ detail.adultQuantity }} × {{ detail.adultPrice }}€,
                 Kids: {{ detail.childQuantity }} × {{ detail.childPrice }}€
               </span>
             </li>
@@ -29,9 +29,13 @@
         </div>
 
         <div class="ticket-footer">
-          <p><strong>Total Price :</strong> <span class="total-price">{{ ticket.totalPrice }} €</span></p>
-          <p><strong>Date of Purchase :</strong> {{ new Date(ticket.createdAt).toLocaleString() }}</p>
-        </div>
+          <span><strong>Usable Date:</strong> {{ new Date(ticket.usableDate).toLocaleDateString() }}</span>
+        
+
+        <div class="ticket-footer"></div>
+        <span><strong>Price Total:</strong> <span class="total-price">{{ ticket.totalPrice }} €</span></span>
+      </div>
+
       </div>
     </div>
 
@@ -103,8 +107,8 @@ export default {
 /* Tickets Grid */
 .tickets-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 20px; /* Space between tickets */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -134,33 +138,46 @@ export default {
 .ticket-details-list {
   list-style: none;
   padding: 0;
-  margin: 10px 0;
+  margin: 0;
 }
 
 .ticket-details-list li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.95rem;
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
-.detail-name {
+.ticket-details-list li .detail-name {
   font-weight: 600;
+  margin-right: 8px;
 }
 
-.detail-quantity {
+.ticket-details-list li .detail-quantity {
   color: #555;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* Footer */
-.ticket-footer {
-  margin-top: 15px;
+/* Usable Date and Price Section */
+.usable-date-price {
+  display: flex;
+  flex-direction: column; /* Ensures items stack vertically */
+  margin-top: 10px;
+}
+
+.usable-date {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px; /* Adds spacing between Usable Date and Price */
 }
 
 .total-price {
   color: #e74c3c;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 /* Book Now Button */
@@ -184,4 +201,7 @@ export default {
 .book-now-button:hover {
   background-color: #218838;
 }
+
+
+
 </style>

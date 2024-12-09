@@ -191,12 +191,14 @@ export default {
         return;
       }
 
+      // Add selected date to the payload
       const payload = {
         username: currentUser,
         numberOfDays: this.numberOfDays,
         hotelChoice: this.hotelChoice ? this.hotelChoice.name : "None",
         ticketDetails,
         totalPrice: this.totalPrice,
+        usableDate: this.selectedDate, // Add the selected date here
       };
 
       try {
@@ -217,7 +219,7 @@ export default {
         console.error("Error saving ticket:", error);
         alert("Failed to save ticket. Please try again.");
       }
-    },
+    }
   },
 };
 </script>
