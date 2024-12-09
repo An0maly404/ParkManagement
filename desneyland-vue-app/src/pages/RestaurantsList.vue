@@ -43,10 +43,10 @@
   </template>
   
   <script>
-  import PizzaFactoryMain from '@/assets/PIZZA-FACTORY-1920x907.jpg'
+  import PizzaFactoryMain from '@/assets/PIZZAFACTORY1.jpg'
   import PizzaFactory2 from '@/assets/PIZZA-FACTORY2.jpeg'
   import BangalaMain from '@/assets/Bangala-Resto.jpeg'
-  import BangalaAdditional from '@/assets/Bangala-Resto-Page-Initiale.jpeg'
+  import BangalaAdditional from '@/assets/BANGALA1.jpeg'
   
   export default {
     name: 'RestaurantsList',

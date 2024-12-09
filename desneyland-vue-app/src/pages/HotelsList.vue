@@ -38,7 +38,7 @@ export default{
             hotels:[
                 {
                     id:1,
-                    name:"HAUNTED HOTEL",
+                    name:"JADRAN HOTEL",
                     image:require('@/assets/HOTEL1.jpg'),
                     additionnalimages:[require('@/assets/HOTEL11.jpg'),require('@/assets/HOTEL12.jpg')],
                     description:"The Hotel Jadran, perched on a cliff overlooking the Adriatic Sea, was a beacon of modernist luxury when it opened in the 1930s. Designed with sleek lines and expansive terraces, it catered to elite guests seeking seaside elegance. Its decline began during the Yugoslav wars of the 1990s, when it was abandoned and left to the elements. Today, its stark, decaying facade contrasts with the sparkling sea, with graffiti-covered walls and collapsing interiors telling a story of lost grandeur. Now a silent relic, it serves as a poignant reminder of history and a compelling attraction in Defectland’s eerie lineup.",

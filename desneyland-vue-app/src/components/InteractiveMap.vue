@@ -20,6 +20,7 @@
 
         <div v-if="selectedAttraction" class="attraction-details" :style="{left:detailsPosition.x +'px',top:detailsPosition.y +'px'}" ref="details">
             <h2>{{ selectedAttraction.name }}</h2>
+            <img v-if="selectedAttraction.image" :src="selectedAttraction.image" alt="Attraction Image" class="attraction-image" />
             <p>{{ selectedAttraction.description }}</p>
             <button @click="closeDetails">Fermer</button>
         </div>
@@ -201,5 +202,11 @@ export default{
 
 .attraction-details button:hover{
     background-color: #d4b920;
+}
+
+.attraction-image{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
 }
 </style>

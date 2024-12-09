@@ -37,6 +37,7 @@
         </div>
     </div>
     <br>
+    <p>Join Us at Defunctland</p>
     <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
 </template>
 
@@ -52,10 +53,13 @@ export default {
         return {
             attractions: [
                 { name: 'Son of beast', waitTime: 25 },
-                { name: 'Skyride', waitTime: 10 },
-                { name: 'Disaster Train', waitTime: 15 },
                 { name: 'The Big Dipper', waitTime: 30 },
+                { name: 'Journey to Atlantis', waitTime: 10 },
+                { name: 'Disaster Transport', waitTime: 15 },
                 { name: 'Tidal Wave', waitTime: 5 },
+                { name: 'Skyride', waitTime: 35 },
+                { name: 'Astrowheel', waitTime: 15 },
+                { name: 'Submarine Voyage', waitTime: 40 },
             ],
             mapSrc: planImage,
             attractionPoints: [
@@ -64,7 +68,8 @@ export default {
                     y: 28,
                     details: {
                         name: "SON OF BEAST",
-                        description: "Son of Beast was a record-breaking wooden roller coaster, notable for being the first of its kind to include a vertical loop. Known for its intense speed and rough ride, it closed in 2012 due to safety concerns and high maintenance costs."
+                        description: "Son of Beast was a record-breaking wooden roller coaster, notable for being the first of its kind to include a vertical loop. Known for its intense speed and rough ride, it closed in 2012 due to safety concerns and high maintenance costs.",
+                        image: require('@/assets/SONOFBEAST1.jpg'),
                     },
                 },
                 {
@@ -72,7 +77,8 @@ export default {
                     y: 10,
                     details: {
                         name: "THE BIG DIPPER",
-                        description: "This iconic wooden roller coaster thrilled guests with its classic out-and-back design. Operating for over 80 years, it was a centerpiece of the park until Geauga Lake’s closure in 2007."
+                        description: "This iconic wooden roller coaster thrilled guests with its classic out-and-back design. Operating for over 80 years, it was a centerpiece of the park until Geauga Lake’s closure in 2007.",
+                        image: require('@/assets/BIGDIPPER1.jpg'),
                     },
                 },
                 {
@@ -80,7 +86,8 @@ export default {
                     y: 10,
                     details: {
                         name: "JOURNEY TO ATLANTIS",
-                        description: "A hybrid water ride and coaster, Journey to Atlantis offered a mix of thrilling drops and gentle splashes. It combined storytelling and aquatic elements, making it a fan favorite before its closure."
+                        description: "A hybrid water ride and coaster, Journey to Atlantis offered a mix of thrilling drops and gentle splashes. It combined storytelling and aquatic elements, making it a fan favorite before its closure.",
+                        image: require('@/assets/JOURNEYTOATLANTIS1.jpg'),
                     },
                 },
                 {
@@ -88,7 +95,8 @@ export default {
                     y: 5,
                     details: {
                         name: "TIDAL WAVE",
-                        description: "This shoot-the-chute water ride gave riders a dramatic drop into a giant wave, soaking both passengers and onlookers. It closed in 2017 to make room for new developments."
+                        description: "This shoot-the-chute water ride gave riders a dramatic drop into a giant wave, soaking both passengers and onlookers. It closed in 2017 to make room for new developments.",
+                        image: require('@/assets/TIDALWAVE1.jpg'),
                     },
                 },
                 {
@@ -96,7 +104,8 @@ export default {
                     y: 30,
                     details: {
                         name: "DISASTER TRANSPORT",
-                        description: "Disaster Transport was an indoor roller coaster themed as a futuristic transport gone awry. Its mix of mild thrills and dark ride elements made it a unique experience before its demolition in 2012."
+                        description: "Disaster Transport was an indoor roller coaster themed as a futuristic transport gone awry. Its mix of mild thrills and dark ride elements made it a unique experience before its demolition in 2012.",
+                        image: require('@/assets/DISASTERTRANSPORT1.jpg'),
                     },
                 },
                 {
@@ -104,7 +113,8 @@ export default {
                     y: 62,
                     details: {
                         name: "SKYRIDE",
-                        description: "A classic cable car attraction that offered scenic views of the park from above. It was a relaxing and nostalgic ride before its closure to accommodate newer attractions."
+                        description: "A classic cable car attraction that offered scenic views of the park from above. It was a relaxing and nostalgic ride before its closure to accommodate newer attractions.",
+                        image: require('@/assets/SKYRIDE1.jpg'),
                     },
                 },
                 {
@@ -112,9 +122,57 @@ export default {
                     y: 62,
                     details: {
                         name: "ASTROWHEEL",
-                        description: "A Ferris wheel providing gentle thrills and panoramic views, it was a staple of AstroWorld until the park shut down in 2005."
+                        description: "A Ferris wheel providing gentle thrills and panoramic views, it was a staple of AstroWorld until the park shut down in 2005.",
+                        image: require('@/assets/ASTROWHEEL1.jpg'),
                     },
                 },
+                {
+                    x: 10,
+                    y: 55,
+                    details: {
+                        name: "Submarine Voyage",
+                        description: "This underwater adventure immersed guests in a simulated deep-sea journey. The attraction was beloved for its creativity but closed in 1998 to make way for modern rides.",
+                        image: require('@/assets/SUBMARINEVOYAGE1.jpg'),
+                    },
+                },
+                {
+                    x: 50,
+                    y: 50,
+                    details: {
+                        name: "Jadran Hotel",
+                        description: "150$ for the night",
+                        image: require('@/assets/HOTEL1.jpg'),
+                    },
+                },
+                {
+                    x: 50,
+                    y: 55,
+                    details: {
+                        name: "Weidmann Hotel",
+                        description: "150$ for the night",
+                        image: require('@/assets/HOTEL2.jpg'),
+                    },
+                },
+                {
+                    x: 52,
+                    y: 85,
+                    details: {
+                        name: "Pizza Factory",
+                        description: "A restaurant specialised in italian food",
+                        image: require('@/assets/PIZZAFACTORY1.jpg'),
+                    },
+                },
+                {
+                    x: 65,
+                    y: 85,
+                    details: {
+                        name: "Le bangala",
+                        description: "A french crêpes restaurant",
+                        image: require('@/assets/BANGALA1.jpeg'),
+                    },
+                },
+                
+                
             ],
             images: [
                 { src: require('@/assets/WINTER1.jpg'), alt: "Image1" },
