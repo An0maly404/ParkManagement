@@ -117,7 +117,7 @@ export default {
       ticketTypes: [
         {
           name: "Basic",
-          features: ["Accès au parc", "Attractions une fois", "Billet pour la journée"],
+          features: ["Access to Defunctland", "5 Rides", "Whole day Ticket"],
           adultPrice: 50,
           childPrice: 25,
           adultQuantity: 0,
@@ -125,7 +125,7 @@ export default {
         },
         {
           name: "Special",
-          features: ["Accès au parc", "Attractions illimitées", "Billet pour la journée"],
+          features: ["Access to Defunctland", "Unlimited Rides", "Whole day Ticket"],
           adultPrice: 100,
           childPrice: 50,
           adultQuantity: 0,
@@ -133,7 +133,7 @@ export default {
         },
         {
           name: "Premium",
-          features: ["Accès au parc", "Repas inclus", "Billets coupe-file"],
+          features: ["Access to Defunctland", "Unlimited Rides and Food", "No Wait Times"],
           adultPrice: 500,
           childPrice: 250,
           adultQuantity: 0,

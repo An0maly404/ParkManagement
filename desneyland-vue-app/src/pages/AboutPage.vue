@@ -26,42 +26,34 @@
             <p>
                 In <strong>1998</strong>, after years of dreaming and saving, Arthur and Evelyn purchased an old,
                 decaying
-                amusement park on the outskirts of <span>[your region]</span>. With a small team of enthusiasts, they
-                began
-                breathing life into what would become DEFUNCTLAND. Their mission? To create a park that celebrated
-                nostalgia
-                while embracing innovation, giving old attractions a new purpose and offering visitors experiences
-                they'd never
-                forget.
+                amusement park on the outskirts of California. With a small team of enthusiasts, they
+                began breathing life into what would become DEFUNCTLAND. Their mission? To create a park that celebrated
+                nostalgia while embracing innovation, giving old attractions a new purpose and offering visitors experiences
+                they'd never forget.
             </p>
         </section>
 
         <section class="content-section">
             <h3>A Park Like No Other</h3>
             <p>
-                When DEFUNCTLAND opened its gates in <strong>2003</strong>, it was an instant success. What made it
-                unique was
-                its blend of restored vintage rides and state-of-the-art attractions. The park was designed as a journey
-                through
-                time, with each zone reflecting a different era of amusement park history.
+                When DEFUNCTLAND opened its gates in <strong>2025</strong>, it was an instant success. What made it
+                unique was its blend of restored vintage rides and state-of-the-art attractions. The park was designed as 
+                a journey through time, with each zone reflecting a different era of amusement park history.
             </p>
         </section>
 
         <section class="content-section">
             <h3>Innovation and Growth</h3>
             <p>
-                Over the years, DEFUNCTLAND grew from a modest project into a globally recognized destination. In
-                <strong>2015</strong>, the park introduced its <em>Interactive Map</em>, allowing visitors to explore
-                the park
-                digitally and plan their adventures in real-time. In <strong>2020</strong>, DEFUNCTLAND became one of
-                the first
-                parks to integrate <strong>AI-driven attractions</strong>, offering personalized experiences for every
-                guest.
+                Over the years, DEFUNCTLAND is fated to grow from a modest project into a globally recognized destination. It
+                even introduced its <em>Interactive Map</em> to allow the visitors to explore the park
+                digitally and plan their adventures in real-time. In <strong>2030</strong>, DEFUNCTLAND plan to become one of
+                the first parks to integrate <strong>AI-driven attractions</strong>, offering personalized experiences 
+                for every guest.
             </p>
             <p>
                 The park continues to innovate, combining its rich history with a forward-thinking approach. From
-                seasonal
-                festivals to new attractions, there’s always something exciting happening at DEFUNCTLAND.
+                seasonal festivals to new attractions, there’s always something exciting happening at DEFUNCTLAND.
             </p>
         </section>
 
@@ -69,21 +61,19 @@
             <h3>Our Mission</h3>
             <p>
                 At DEFUNCTLAND, we believe in the power of nostalgia and imagination. Our mission is to honor the past,
-                celebrate
-                the present, and inspire the future. Whether you're here to relive childhood memories, create new ones,
-                or simply
-                escape into a world of wonder, DEFUNCTLAND is a place where magic never fades.
+                celebrate the present, and inspire the future. Whether you're here to relive childhood memories, 
+                create new ones, or simply escape into a world of wonder, DEFUNCTLAND is a place where magic never fades.
             </p>
         </section>
 
         <section class="content-section">
             <h3>Visit Us</h3>
             <p>
-                You’ll find DEFUNCTLAND just outside <span>[your major city]</span>, at the heart of adventure:
+                You’ll find DEFUNCTLAND just outside <span>Wonderland</span>, at the heart of adventure:
             </p>
             <address>
                 <strong>123 Imagination Lane</strong><br />
-                Nostalgia Hills, NY 12804, USA
+                Nostalgia Hills, NY 12804, USA 2
             </address>
             <p>
                 We’re only a short drive from downtown, with ample parking and easy access to public transportation.
