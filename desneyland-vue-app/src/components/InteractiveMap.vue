@@ -109,8 +109,6 @@ export default{
 
 <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-
 .map-container {
   border-radius: 10px;
   position: relative;
@@ -178,7 +176,7 @@ export default{
 }
 
 .attraction-details {
-    font-family: "Lilita One", sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
     background: rgba(255, 255, 255, 0.9);
     padding: 1rem;

@@ -75,11 +75,10 @@
 <p>"Where yesterday meets tomorrow, and dreams never end."</p>
 </template>  
 
-<style>
+<style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
-
-body{
-    font-family: "Lilita One", sans-serif ;
+h1,h2,p{
+    color: #112D4E;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
 </style>

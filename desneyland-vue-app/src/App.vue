@@ -122,7 +122,6 @@ export default{
 </script>
 
 <style scoped>
-
 .routerview{
   margin: 50px;
   margin-top: 200px; /*HELP TO SEE THE ROUTER NAV*/
@@ -130,7 +129,7 @@ export default{
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color:#eaf8fc ;
+  background-color:#F9F7F7 ;
   border-radius: 10px;
 }
 
@@ -140,7 +139,7 @@ export default{
     top: 0;
     right: 0;
     width: 100%;
-    font-family: "Arial", sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: fixed;
     top: 0;
     width: 100%;
@@ -148,7 +147,7 @@ export default{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0.1rem;
-    background-color: #d8f4fc;
+    background-color: #DBE2EF;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     overflow: visible;
@@ -174,7 +173,7 @@ export default{
 }
 
 .navbar-links{ /*STYLE POUR LES LIENS DANS LA BARRE DE NAVIGATION*/
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,7 +199,7 @@ export default{
   position:absolute;
   top: 80px;
   right: 10px;
-  background-color: #d8f4fc;
+  background-color: #DBE2EF;
   width: 40%;
   box-shadow:0 4px 6px black ;
   z-index: 1000;
@@ -242,18 +241,18 @@ export default{
 .navbar-links a,.mobile-menu a { /*STYLE FOR THE NAVIGATION LINKS IN THE NAVBAR*/
     margin: 0 1rem;
     text-decoration: none;
-    font-size: 1.25rem;
-    color: #333;
+    font-size: 1.5rem;
+    color: #3F72AF;
     transition: color 0.3s;
     line-height: 1;
   }
 
 .navbar-links a:hover,.mobile-menu a:hover { /*STYLE WHEN YOU HOVER ON THE LINKS IN THE NAVBAR*/
-    color: #545ddd;
+    color: #112D4E;
   }
 
 .navbar-right .book-now {
-    background-color: #2646d7;
+    background-color: #112D4E;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -265,7 +264,7 @@ export default{
   }
 
 .navbar-right .book-now:hover {
-    background-color: #d4b920;
+    background-color: #3F72AF;
   }
 
   
@@ -291,6 +290,7 @@ div {
 /*__________________________________________FOOTER____________________________________*/
 .footer {
   background-color: #d8f4fc;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;

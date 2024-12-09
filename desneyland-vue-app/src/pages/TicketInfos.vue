@@ -53,6 +53,10 @@
   </script>
   
   <style scoped>
+
+  h1,h2,p,li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
   /* Conteneur principal */
   .container {
     display: flex;

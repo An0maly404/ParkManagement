@@ -126,7 +126,7 @@
 
   .difficulty-header {
     color: rgba(0, 0, 0, 0.363);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-transform: uppercase;
   }
   

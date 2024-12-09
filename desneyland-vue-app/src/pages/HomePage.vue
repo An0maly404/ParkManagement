@@ -262,7 +262,8 @@ export default {
 }
 
 .book-now {
-    background-color: #2646d7;
+    background-color: #112D4E;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -277,18 +278,18 @@ export default {
     background-color: #d4b920;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 h1,
 h2,
 p,
 h3 {
-    font-family: "Lilita One", sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #3F72AF ;
 }
 
 button{
-    font-family: "Lilita One", sans-serif ;
-    background-color: #2646d7;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #112D4E;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -317,6 +318,7 @@ button:hover{
 }
 
 .attraction {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;

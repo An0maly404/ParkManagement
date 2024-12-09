@@ -65,6 +65,12 @@ export default{
 </script>
 
 <style scoped>
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1,h2,p,h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .hotels-container {
   display: flex;
   flex-direction: column;
