@@ -199,9 +199,9 @@ export default {
                 
             ],
             images: [
-                { src: require('@/assets/WINTER1.jpg'), alt: "Image1" },
-                { src: require('@/assets/WINTER2.jpg'), alt: "Image2" },
-                { src: require('@/assets/WINTER3.jpg'), alt: "Image3" },
+                { src: require('@/assets/WINTER1.png'), alt: "Image1" },
+                { src: require('@/assets/WINTER2.png'), alt: "Image2" },
+                { src: require('@/assets/WINTER3.png'), alt: "Image3" },
             ],
             currentIndex: 0,
         };
