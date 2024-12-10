@@ -67,13 +67,13 @@ export default {
     data() {
         return {
             openinghours:[
-                {day:'Monday',hours:'10h-20h'},
+                {day:'Monday',hours:'Closed'},
                 {day:'Tuesday',hours:'10h-20h'},
                 {day:'Wednesday',hours:'10h-20h'},
                 {day:'Thursday',hours:'10h-20h'},
-                {day:'Friday',hours:'10h-20h'},
-                {day:'Saturday',hours:'10h-20h'},
-                {day:'Sunday',hours:'10h-20h'},
+                {day:'Friday',hours:'10h-00h'},
+                {day:'Saturday',hours:'10h-00h'},
+                {day:'Sunday',hours:'10h-00h'},
             ],
             attractions: [
                 { name: 'Son of beast', waitTime: 25 },

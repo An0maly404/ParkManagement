@@ -226,7 +226,7 @@ a:hover {
 .book-now {
   display: block;
   margin: 30px auto 0;
-  background-color: #2646d7;
+  background-color: #112D4E;
   color: #fff;
   padding: 0.7rem 1.5rem;
   text-align: center;

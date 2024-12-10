@@ -34,6 +34,7 @@
                 </div>
             </div>
         </div>
+        <router-link class="book-now" to="/loginpage">BOOK NOW !</router-link>
     </div>
 </template>
 
@@ -265,4 +266,20 @@ header {
         transform: translateY(0);
     }
 }
+.book-now {
+    background-color: #112D4E;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+.book-now:hover {
+    background-color: #d4b920;
+}
+
 </style>
