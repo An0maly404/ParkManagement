@@ -53,11 +53,11 @@ export default {
         {
           name: "Pizza Factory",
           image: require("@/assets/PIZZAFACTORY1.jpg"),
-          description: "La Pizza Factory Mashallah pizza.",
+          description: "La Pizza Factory Margharita pizza.",
           additionalImages: [require("@/assets/PIZZA-FACTORY2.jpeg")],
         },
         {
-          name: "Le Bangala",
+          name: "Le Bungalo",
           image: require("@/assets/Bangala-Resto.jpeg"),
           description: "Le Bangala is proposing you BIIIG crepes.",
           additionalImages: [require("@/assets/BANGALA1.jpeg")],
